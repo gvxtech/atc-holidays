@@ -4,97 +4,689 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>FAQ | Travel</title>
-    <meta name="description" content="Explore destinations and thoughtfully planned travel packages.">
+
+    <title>ATC Holidays – Frequently Asked Travel Questions</title>
+
+    <meta name="description"
+        content="Find answers to common questions about ATC Holidays South India tour packages, Kerala trips, Munnar, Ooty, Coorg, Wayanad, bookings and travel support.">
+
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <!-- Website Favicon -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <link rel="icon" type="image/png" href="assets/images/faviconi.png">
+
     <meta name="theme-color" content="#092b2b">
+
+    <style>
+
+        /* FAQ INTRO */
+
+        .faq-intro {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 45px;
+        }
+
+        .faq-intro h2 {
+            color: #092b2b;
+            font-size: clamp(25px, 4vw, 34px);
+            margin-bottom: 14px;
+        }
+
+        .faq-intro p {
+            color: #667878;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        /* FAQ CATEGORY */
+
+        .faq-category {
+            color: #092b2b;
+            font-size: 21px;
+            margin: 35px 0 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .faq-category i {
+            color: #d5a900;
+        }
+
+        /* FAQ LIST */
+
+        .faq-list {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid #e4ece6;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            padding: 0;
+            overflow: hidden;
+            transition: .3s ease;
+            box-shadow: 0 5px 18px rgba(9, 43, 43, .04);
+        }
+
+        .faq-item:hover {
+            border-color: #d5a900;
+            transform: translateY(-2px);
+        }
+
+        .faq-item summary {
+            position: relative;
+            cursor: pointer;
+            list-style: none;
+            padding: 21px 55px 21px 22px;
+            color: #092b2b;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            display: grid;
+            place-items: center;
+            background: #edf5f0;
+            color: #092b2b;
+            border-radius: 50%;
+            font-size: 21px;
+            font-weight: 400;
+            transition: .3s;
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+            background: #092b2b;
+            color: #fff;
+        }
+
+        .faq-item p {
+            padding: 0 22px 22px;
+            margin: 0;
+            color: #687a78;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* CONTACT BOX */
+
+        .faq-contact {
+            margin: 55px auto 10px;
+            max-width: 950px;
+            background: #092b2b;
+            color: #fff;
+            border-radius: 18px;
+            padding: 38px 30px;
+            text-align: center;
+        }
+
+        .faq-contact i {
+            font-size: 35px;
+            color: #f4c400;
+            margin-bottom: 18px;
+        }
+
+        .faq-contact h2 {
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .faq-contact p {
+            color: #d3e0da;
+            line-height: 1.8;
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        .faq-contact a {
+            display: inline-block;
+            background: #f4c400;
+            color: #092b2b;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .faq-contact a:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        @media(max-width:600px) {
+
+            .faq-category {
+                font-size: 18px;
+            }
+
+            .faq-item summary {
+                padding: 17px 48px 17px 16px;
+                font-size: 14px;
+            }
+
+            .faq-item summary::after {
+                right: 14px;
+            }
+
+            .faq-item p {
+                padding: 0 16px 18px;
+                font-size: 13px;
+            }
+
+            .faq-contact {
+                padding: 30px 20px;
+            }
+
+            .faq-contact h2 {
+                font-size: 22px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
-    <div class="page-progress" aria-hidden="true"></div>
-    <header class="site-header inner">
-        <div class="container nav"><a class="brand" href="index.html">
-    <img src="assets/images/logo-top2.png" alt="ATC Holidays" 
-         style="height: 55px; width: auto; object-fit: contain;">
-</a><button class="menu-toggle" aria-label="Open navigation">☰</button>
-            <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a
-                    href="services.html">Services</a><a href="packages.html">Tour Packages</a><a
-                    href="blog.html">Blog</a><a href="faq.html">FAQ</a><a class="nav-cta" href="contact.html">Contact
-                    Us</a></nav>
-        </div>
-    </header>
-    <section class="page-hero">
-        <div class="container">
-            <div class="breadcrumbs">HOME / FREQUENTLY ASKED QUESTIONS</div>
-            <h1>Frequently Asked Questions</h1>
-            <p>Quick answers to common questions. Update these to reflect the company's policies.</p>
-        </div>
-    </section>
-    <section class="content">
-        <div class="container faq-list">
-            <details class="faq-item">
-                <summary>How can I book a tour package?</summary>
-                <p>Send an enquiry through our contact page or WhatsApp. Our team will guide you through the booking
-                    steps.</p>
-            </details>
-            <details class="faq-item">
-                <summary>Can I customise a package?</summary>
-                <p>Yes. Share your preferred destinations, dates, budget and group size.</p>
-            </details>
-            <details class="faq-item">
-                <summary>Are flights and accommodation included?</summary>
-                <p>Inclusions vary by package. Contact the team for confirmed details.</p>
-            </details>
-            <details class="faq-item">
-                <summary>What documents should I carry?</summary>
-                <p>Requirements depend on your destination. Confirm current requirements before departure.</p>
-            </details>
-            <details class="faq-item">
-                <summary>How can I contact the travel team?</summary>
-                <p>Use the enquiry form, email or WhatsApp chat link on this website.</p>
-            </details>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div><a class="brand" href="index.html">
-    <img src="assets/images/footer logo.png" alt="ATC Holidays"
-         style="height: 80px; width: auto; object-fit: contain;">
-</a>
-                    <p>Thoughtfully planned journeys, memorable places and experiences worth travelling for. Replace
-                        with your company introduction.</p>
-                </div>
-                <div>
-                    <h4>Explore</h4>
-                    <p><a href="about.html">About Us</a><br><a href="services.html">Services</a><br><a
-                            href="packages.html">Tour Packages</a><br><a href="blog.html">Blog</a></p>
-                </div>
-                <div>
-                    <h4>Information</h4>
-                    <p><a href="faq.html">FAQs</a><br><a href="contact.html">Contact Us</a></p>
-                </div>
-                <div>
-                    <h4>Connect</h4>
-                    <p><a href="#">Facebook</a><br><a href="#">X / Twitter</a><br><a href="#">LinkedIn</a><br><a
-                            href="mailto:hello@example.com">hello@example.com</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom"><span>© <span data-year></span> Travel. All rights reserved.</span><span>Designed
-                    for journeys that stay with you.</span></div>
-        </div>
-    </footer><a class="whatsapp"
-   href="https://wa.me/919895499477?text=Hello%20I%20would%20like%20to%20know%20about%20your%20tour%20packages"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Chat on WhatsApp">
 
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
+    <div class="page-progress" aria-hidden="true"></div>
+
+    <!-- HEADER -->
+
+    <header class="site-header inner">
+
+        <div class="container nav">
+
+            <a class="brand" href="index.html">
+                <img src="assets/images/logo-top2.png"
+                    alt="ATC Holidays"
+                    style="height:55px;width:auto;object-fit:contain;">
+            </a>
+
+            <button class="menu-toggle" aria-label="Open navigation">
+                ☰
+            </button>
+
+            <nav class="nav-links">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="packages.html">Tour Packages</a>
+                <a href="blog.html">Blog</a>
+                <a href="faq.html">FAQ</a>
+                <a class="nav-cta" href="contact.html">Contact Us</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE HERO -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <div class="breadcrumbs">
+                HOME / FREQUENTLY ASKED QUESTIONS
+            </div>
+
+            <h1>Frequently Asked Questions</h1>
+
+            <p>
+                Everything you need to know about exploring South India
+                with ATC Holidays.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ CONTENT -->
+
+    <section class="content">
+
+        <div class="container">
+
+            <div class="faq-intro">
+
+                <h2>Planning Your Next South Indian Getaway?</h2>
+
+                <p>
+                    Whether you're dreaming of Kerala's peaceful backwaters,
+                    Munnar's misty mountains, Ooty's scenic hills or Coorg's
+                    beautiful coffee plantations, find answers to common
+                    travel questions here.
+                </p>
+
+            </div>
+
+
+            <div class="faq-list">
+
+
+                <!-- GENERAL QUESTIONS -->
+
+                <h3 class="faq-category">
+                    <i class="fa-solid fa-circle-info"></i>
+                    General Travel Questions
+                </h3>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        What destinations does ATC Holidays cover?
+                    </summary>
+
+                    <p>
+                        ATC Holidays focuses on beautiful South Indian
+                        destinations, including Kerala, Tamil Nadu and
+                        Karnataka. Popular destinations include Munnar,
+                        Alleppey, Wayanad, Ooty, Coorg and other scenic
+                        locations across South India.
+                    </p>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        Do you provide customised South India tour packages?
+                    </summary>
+
+                    <p>
+                        Yes! You can customise your trip based on your
+                        preferred destinations, travel dates, budget,
+                        number of travellers and travel preferences.
+                        Contact our team to discuss your requirements.
+                    </p>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        Which is the best time to visit South India?
+                    </summary>
+
+                    <p>
+                        The ideal travel season depends on your destination.
+                        October to March is generally popular for hill
+                        stations and sightseeing. Monsoon months can also
+                        offer beautiful greenery and refreshing landscapes,
+                        especially in Kerala and Karnataka.
+                    </p>
+
+                </details>
+
+
+                <!-- DESTINATION QUESTIONS -->
+
+                <h3 class="faq-category">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Destinations & Packages
+                </h3>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        What are the popular Kerala tour destinations?
+                    </summary>
+
+                    <p>
+                        Some popular Kerala destinations include Munnar,
+                        Alleppey, Wayanad, Thekkady, Kumarakom and Kochi.
+                        Visitors can enjoy hill stations, backwaters,
+                        waterfalls, wildlife and beautiful beaches.
+                    </p>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        Do you organise Munnar and Ooty tour packages?
+                    </summary>
+
+                    <p>
+                        Yes. Munnar and Ooty are popular South Indian
+                        hill station destinations. Depending on availability
+                        and your requirements, you can enquire about
+                        packages covering tea gardens, viewpoints,
+                        scenic drives and local attractions.
+                    </p>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        Can I visit multiple South Indian destinations
+                        in one trip?
+                    </summary>
+
+                    <p>
+                        Yes. You can plan multi-destination journeys
+                        combining places such as Munnar and Alleppey,
+                        Ooty and Coonoor, or Coorg and Wayanad.
+                        Our team can help organise a suitable itinerary.
+                    </p>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        Do you arrange family trips and group tours?
+                    </summary>
+
+                    <p>
+                        Yes. You can enquire about family holidays,
+                        group tours, school trips, friends' getaways
+                        and other travel arrangements. Packages can
+                        be planned according to group size and
+                        travel requirements.
+                    </p>
+
+                </details>
+
+
+                <!-- BOOKING QUESTIONS -->
+
+                <h3 class="faq-category">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Booking & Payments
+                </h3>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        How can I book a tour package?
+                    </summary>
+
+                    <p>
+                        Browse our available tour packages and contact
+                        us through the enquiry form or WhatsApp.
+                        Share your destination, preferred dates and
+                        number of travellers. Our team will guide
+                        you through the booking process.
+                    </p>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        How early should I book my South India trip?
+                    </summary>
+
+                    <p>
+                        We recommend enquiring a few weeks in advance.
+                        During peak holiday seasons, festivals and
+                        school vacations, booking earlier is advisable
+                        to improve your accommodation and travel options.
+                    </p>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        Are accommodation and transportation included
+                        in the packages?
+                    </summary>
+
+                    <p>
+                        Package inclusions depend on the selected
+                        itinerary. Accommodation, transportation,
+                        sightseeing and other services may be included
+                        based on your chosen package. Please confirm
+                        the inclusions before booking.
+                    </p>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        Can I cancel or reschedule my booking?
+                    </summary>
+
+                    <p>
+                        Cancellation and rescheduling conditions depend
+                        on the package and booking terms. Please contact
+                        our team before making changes to your reservation
+                        to understand the applicable conditions.
+                    </p>
+
+                </details>
+
+
+                <!-- TRAVEL SUPPORT -->
+
+                <h3 class="faq-category">
+                    <i class="fa-solid fa-headset"></i>
+                    Travel Support & Assistance
+                </h3>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        Do you provide travel assistance during the trip?
+                    </summary>
+
+                    <p>
+                        Our travel support team can assist with
+                        travel-related enquiries and coordination
+                        according to the services included in your
+                        booking. Contact us for details about the
+                        support available during your journey.
+                    </p>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        What should I carry for a South India trip?
+                    </summary>
+
+                    <p>
+                        Carry comfortable clothing, walking shoes,
+                        personal medicines, identification documents
+                        and essential toiletries. For hill stations
+                        such as Munnar, Ooty and Coorg, carrying
+                        warm clothing is recommended.
+                    </p>
+
+                </details>
+
+
+                <details class="faq-item">
+
+                    <summary>
+                        How can I contact ATC Holidays?
+                    </summary>
+
+                    <p>
+                        You can contact us through the website's
+                        Contact Us page or WhatsApp button.
+                        Our team will help you with package enquiries,
+                        travel planning and booking-related questions.
+                    </p>
+
+                </details>
+
+
+            </div>
+
+
+            <!-- CONTACT CTA -->
+
+            <div class="faq-contact">
+
+                <i class="fa-solid fa-headset"></i>
+
+                <h2>Still Have Questions?</h2>
+
+                <p>
+                    Can't find the answer you're looking for?
+                    Our team is happy to help you plan your next
+                    South Indian holiday.
+                </p>
+
+                <a href="https://wa.me/919895499477?text=Hello%20ATC%20Holidays,%20I%20have%20a%20question%20about%20your%20tour%20packages."
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Chat With Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <a class="brand" href="index.html">
+
+                        <img src="assets/images/footer logo.png"
+                            alt="ATC Holidays"
+                            style="height:80px;width:auto;object-fit:contain;">
+
+                    </a>
+
+                    <p>
+                        Thoughtfully planned journeys, memorable places
+                        and experiences worth travelling for.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h4>Explore</h4>
+
+                    <p>
+                        <a href="about.html">About Us</a><br>
+                        <a href="services.html">Services</a><br>
+                        <a href="packages.html">Tour Packages</a><br>
+                        <a href="blog.html">Blog</a>
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h4>Information</h4>
+
+                    <p>
+                        <a href="faq.html">FAQs</a><br>
+                        <a href="contact.html">Contact Us</a>
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h4>Connect</h4>
+
+                    <p>
+                        <a href="#">Facebook</a><br>
+                        <a href="#">X / Twitter</a><br>
+                        <a href="#">LinkedIn</a><br>
+                        <a href="mailto:hello@example.com">hello@example.com</a>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © <span data-year></span> ATC Holidays. All rights reserved.
+                </span>
+
+                <span>
+                    Designed for journeys that stay with you.
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- WHATSAPP BUTTON -->
+
+    <a class="whatsapp"
+        href="https://wa.me/919895499477?text=Hello%20ATC%20Holidays,%20I%20would%20like%20to%20know%20about%20your%20tour%20packages."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+
     <script src="assets/site.js"></script>
+
 </body>
 
 </html>

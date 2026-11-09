@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Plan a Mountain Escape | ATC Holidays</title>
+
+    <meta name="description"
+        content="Discover how to plan a refreshing mountain getaway with ATC Holidays. Explore destinations, travel tips and practical advice.">
+
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="assets/images/faviconi.png">
+    <meta name="theme-color" content="#092b2b">
+
+    <style>
+        /* BLOG DETAIL */
+
+        .blog-detail {
+            padding: 75px 0;
+        }
+
+        .blog-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(250px, .8fr);
+            gap: 45px;
+            align-items: start;
+        }
+
+        .blog-main {
+            min-width: 0;
+        }
+
+        .blog-main .blog-cover {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 18px;
+            display: block;
+            margin-bottom: 25px;
+        }
+
+        .blog-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: #718080;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .blog-meta i {
+            color: #d5a900;
+            margin-right: 6px;
+        }
+
+        .blog-main h2 {
+            font-size: clamp(27px, 4vw, 38px);
+            color: #092b2b;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .blog-main h3 {
+            color: #092b2b;
+            font-size: 23px;
+            margin: 32px 0 13px;
+        }
+
+        .blog-main p {
+            color: #647575;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .blog-main ul {
+            padding-left: 22px;
+            margin-bottom: 25px;
+        }
+
+        .blog-main li {
+            color: #647575;
+            line-height: 2;
+            font-size: 15px;
+        }
+
+        .blog-highlight {
+            background: #edf6f2;
+            border-left: 4px solid #d5a900;
+            padding: 22px 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .blog-highlight p {
+            margin: 0;
+            color: #092b2b;
+            font-weight: 500;
+        }
+
+        /* SIDEBAR */
+
+        .blog-sidebar {
+            position: sticky;
+            top: 110px;
+        }
+
+        .sidebar-box {
+            background: #f3f8f5;
+            padding: 27px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+        }
+
+        .sidebar-box h3 {
+            color: #092b2b;
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+
+        .sidebar-box p {
+            color: #647575;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .sidebar-links a {
+            display: block;
+            color: #526666;
+            text-decoration: none;
+            padding: 12px 0;
+            border-bottom: 1px solid #dce8e1;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .sidebar-links a:hover {
+            color: #c99d00;
+            padding-left: 6px;
+        }
+
+        .sidebar-cta {
+            background: #092b2b;
+            color: white;
+            padding: 28px;
+            border-radius: 16px;
+        }
+
+        .sidebar-cta h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .sidebar-cta p {
+            color: #d1dfd9;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-cta a {
+            display: inline-block;
+            background: #f4c400;
+            color: #092b2b;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .blog-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: #092b2b;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .blog-back:hover {
+            color: #c99d00;
+        }
+
+        .blog-share {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-top: 1px solid #e3eae5;
+            padding-top: 25px;
+            margin-top: 35px;
+        }
+
+        .blog-share a {
+            color: #092b2b;
+            font-size: 19px;
+            transition: .3s;
+        }
+
+        .blog-share a:hover {
+            color: #d5a900;
+        }
+
+        @media(max-width:900px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-sidebar {
+                position: static;
+            }
+
+            .blog-main .blog-cover {
+                height: 350px;
+            }
+        }
+
+        @media(max-width:600px) {
+            .blog-detail {
+                padding: 45px 0;
+            }
+
+            .blog-main .blog-cover {
+                height: 240px;
+                border-radius: 12px;
+            }
+
+            .blog-main p {
+                font-size: 14px;
+            }
+
+            .blog-main h3 {
+                font-size: 20px;
+            }
+
+            .sidebar-box,
+            .sidebar-cta {
+                padding: 22px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="page-progress" aria-hidden="true"></div>
+
+    <!-- HEADER -->
+
+    <header class="site-header inner">
+        <div class="container nav">
+
+            <a class="brand" href="index.html">
+                <img src="assets/images/logo-top2.png"
+                    alt="ATC Holidays"
+                    style="height:55px;width:auto;object-fit:contain;">
+            </a>
+
+            <button class="menu-toggle" aria-label="Open navigation">
+                ☰
+            </button>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="packages.html">Tour Packages</a>
+                <a href="blog.html">Blog</a>
+                <a href="faq.html">FAQ</a>
+                <a class="nav-cta" href="contact.html">Contact Us</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- PAGE HERO -->
+
+    <section class="page-hero">
+        <div class="container">
+
+            <div class="breadcrumbs">
+                <a href="index.html">HOME</a> /
+                <a href="blog.html">BLOG</a> /
+                MOUNTAIN ESCAPE
+            </div>
+
+            <h1>Travel Stories & Inspiration</h1>
+
+            <p>Discover ideas and inspiration for your next unforgettable journey.</p>
+
+        </div>
+    </section>
+
+
+    <!-- BLOG CONTENT -->
+
+    <section class="blog-detail">
+
+        <div class="container">
+
+            <div class="blog-layout">
+
+                <!-- MAIN ARTICLE -->
+
+                <article class="blog-main">
+
+                    <a href="blog.html" class="blog-back">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Blog
+                    </a>
+
+                    <img class="blog-cover"
+                        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85"
+                        alt="Beautiful mountain landscape">
+
+                    <div class="blog-meta">
+
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            12 October 2026
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-folder"></i>
+                            Travel Guide
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            5 min read
+                        </span>
+
+                    </div>
+
+                    <h2>Plan a Mountain Escape: Your Guide to a Refreshing Getaway</h2>
+
+                    <p>
+                        Sometimes, the best way to refresh your mind is to step away
+                        from your everyday routine and experience the beauty of nature.
+                        A mountain getaway offers the perfect combination of peaceful
+                        surroundings, breathtaking landscapes and unforgettable
+                        experiences.
+                    </p>
+
+                    <p>
+                        Whether you are planning a relaxing holiday with family,
+                        an adventurous trip with friends or a peaceful escape
+                        with your loved ones, mountain destinations have something
+                        special to offer.
+                    </p>
+
+                    <h3>1. Choose the Perfect Mountain Destination</h3>
+
+                    <p>
+                        Selecting the right destination is the first step towards
+                        planning a memorable mountain holiday. Consider the type
+                        of experience you want, the weather, accessibility and
+                        activities available at your destination.
+                    </p>
+
+                    <p>
+                        South India offers several beautiful mountain destinations,
+                        including:
+                    </p>
+
+                    <ul>
+                        <li><strong>Munnar:</strong> Famous for its tea gardens,
+                            misty hills and beautiful viewpoints.</li>
+
+                        <li><strong>Ooty:</strong> Known for its cool climate,
+                            scenic gardens and mountain railway.</li>
+
+                        <li><strong>Coorg:</strong> A wonderful destination
+                            surrounded by coffee plantations and greenery.</li>
+
+                        <li><strong>Wayanad:</strong> Perfect for nature lovers,
+                            waterfalls and peaceful surroundings.</li>
+                    </ul>
+
+                    <h3>2. Plan Your Travel in Advance</h3>
+
+                    <p>
+                        Planning your journey ahead of time helps you enjoy a
+                        stress-free holiday. Research transportation options,
+                        accommodation, sightseeing locations and the best
+                        season to visit your destination.
+                    </p>
+
+                    <p>
+                        Booking your accommodation and travel arrangements early
+                        can also help you find better options, especially during
+                        holidays and peak travel seasons.
+                    </p>
+
+                    <div class="blog-highlight">
+
+                        <p>
+                            <i class="fa-solid fa-lightbulb"></i>
+                            Travel Tip: Keep some flexibility in your itinerary.
+                            Sometimes the most memorable travel experiences
+                            happen when you explore something unexpected!
+                        </p>
+
+                    </div>
+
+                    <h3>3. Pack Smart for Your Mountain Adventure</h3>
+
+                    <p>
+                        Mountain destinations can have changing weather conditions.
+                        Carrying the right essentials will make your journey
+                        comfortable and enjoyable.
+                    </p>
+
+                    <ul>
+                        <li>Comfortable clothing and warm jackets.</li>
+                        <li>Walking shoes suitable for exploring.</li>
+                        <li>Personal medicines and essential toiletries.</li>
+                        <li>Camera or smartphone for capturing memories.</li>
+                        <li>Travel documents and identification.</li>
+                    </ul>
+
+                    <h3>4. Explore Nature and Local Experiences</h3>
+
+                    <p>
+                        A mountain holiday is not just about visiting viewpoints.
+                        Take time to explore local culture, taste regional food,
+                        visit beautiful waterfalls and enjoy the peaceful
+                        atmosphere of nature.
+                    </p>
+
+                    <p>
+                        Capture beautiful memories, interact with local communities
+                        and experience the destination beyond the usual tourist
+                        attractions.
+                    </p>
+
+                    <h3>5. Make Your Journey Memorable with ATC Holidays</h3>
+
+                    <p>
+                        Every journey deserves thoughtful planning. At ATC Holidays,
+                        we aim to make travel more comfortable and enjoyable through
+                        carefully planned tour packages and friendly travel support.
+                    </p>
+
+                    <p>
+                        From choosing destinations to organising your travel
+                        arrangements, we help you focus on what matters most:
+                        enjoying your holiday and creating unforgettable memories.
+                    </p>
+
+                    <div class="blog-highlight">
+
+                        <p>
+                            Your next mountain adventure is waiting.
+                            Explore new destinations, discover beautiful places
+                            and make every journey memorable with ATC Holidays.
+                        </p>
+
+                    </div>
+
+                    <!-- SHARE -->
+
+                    <div class="blog-share">
+
+                        <strong>Share this article:</strong>
+
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/blog-mountain-escape.html"
+                            target="_blank" rel="noopener noreferrer"
+                            aria-label="Share on Facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+
+                        <a href="https://twitter.com/intent/tweet?text=Plan%20a%20Mountain%20Escape"
+                            target="_blank" rel="noopener noreferrer"
+                            aria-label="Share on X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                        <a href="https://api.whatsapp.com/send?text=Plan%20a%20Mountain%20Escape"
+                            target="_blank" rel="noopener noreferrer"
+                            aria-label="Share on WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SIDEBAR -->
+
+                <aside class="blog-sidebar">
+
+                    <div class="sidebar-box">
+
+                        <h3>About ATC Holidays</h3>
+
+                        <p>
+                            Discover beautiful destinations and thoughtfully
+                            planned journeys with ATC Holidays. We help turn
+                            your travel dreams into memorable experiences.
+                        </p>
+
+                    </div>
+
+
+                    <div class="sidebar-box">
+
+                        <h3>Explore</h3>
+
+                        <div class="sidebar-links">
+
+                            <a href="packages.html">
+                                <i class="fa-solid fa-plane"></i>
+                                Tour Packages
+                            </a>
+
+                            <a href="services.html">
+                                <i class="fa-solid fa-compass"></i>
+                                Travel Services
+                            </a>
+
+                            <a href="about.html">
+                                <i class="fa-solid fa-circle-info"></i>
+                                About Us
+                            </a>
+
+                            <a  href="https://wa.me/919895499477?text=Hello%20I%20would%20like%20to%20know%20about%20your%20tour%20packages"
+        target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+                                <i class="fa-solid fa-envelope"></i>
+                                Contact Us
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="sidebar-cta">
+
+                        <h3>Ready for Your Next Adventure?</h3>
+
+                        <p>
+                            Let us help you plan a wonderful holiday.
+                            Discover destinations and find the right
+                            travel experience for you.
+                        </p>
+
+                        <a href="packages.html">
+                            Explore Packages
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <a class="brand" href="index.html">
+                        <img src="assets/images/footer logo.png"
+                            alt="ATC Holidays"
+                            style="height:80px;width:auto;object-fit:contain;">
+                    </a>
+
+                    <p>
+                        Thoughtfully planned journeys, memorable places
+                        and experiences worth travelling for.
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h4>Explore</h4>
+
+                    <p>
+                        <a href="about.html">About Us</a><br>
+                        <a href="services.html">Services</a><br>
+                        <a href="packages.html">Tour Packages</a><br>
+                        <a href="blog.html">Blog</a>
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h4>Information</h4>
+
+                    <p>
+                        <a href="faq.html">FAQs</a><br>
+                        <a href="contact.html">Contact Us</a>
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h4>Connect</h4>
+
+                    <p>
+                        <a href="#">Facebook</a><br>
+                        <a href="#">X / Twitter</a><br>
+                        <a href="#">LinkedIn</a><br>
+                        <a href="mailto:hello@example.com">hello@example.com</a>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <span>
+                    © <span data-year></span> ATC Holidays. All rights reserved.
+                </span>
+
+                <span>Designed for journeys that stay with you.</span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- WHATSAPP -->
+
+    <a class="whatsapp"
+        href="https://wa.me/919895499477?text=Hello%20ATC%20Holidays,%20I%20would%20like%20to%20know%20about%20your%20tour%20packages"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+
+    <script src="assets/site.js"></script>
+
+</body>
+</html>

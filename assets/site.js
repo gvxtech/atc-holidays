@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  const destinations=[
   {name:'OOTTY',description:'Discover the soul of Tamilnadu, where emerald hills meet peaceful Lands. Explore beautiful landscapes, experience local culture and make memories that stay with you.',url:'packages.html'},
   {name:'MUNNAR',description:'Escape to Munnar, an land of tea hills, lush rice terraces and timeless culture. Discover hidden corners, peaceful retreats and unforgettable island experiences.',url:'packages.html'},
-  {name:'ALAPPY',description:'Experience Alappy with its back waters, beautiful houseboats, golden sun rise and welcoming culture. Find the perfect balance of adventure and relaxation.',url:'package-detail.html'},
+  {name:'ALLEPPY',description:'Experience Alappy with its back waters, beautiful houseboats, golden sun rise and welcoming culture. Find the perfect balance of adventure and relaxation.',url:'package-detail.html'},
   {name:'COORG',description:'Step into India’s rich heritage and discover magnificent architecture, colourful markets and stories that have travelled through generations.',url:'packages.html'}
  ];
  const cards=[...hero.querySelectorAll('.destination-card')],bgs=[...hero.querySelectorAll('.destination-bg')];
