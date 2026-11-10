@@ -1552,3 +1552,94 @@ footer a:hover {
     object-fit: contain;
     display: block;
 }
+
+.call {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    background: rgb(9, 43, 43);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: 0.3s ease;
+}
+
+.call:hover {
+    background: rgb(9, 43, 43);
+    transform: scale(1.1);
+}
+
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Desktop */
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .social-icons {
+       margin-left: 25px;
+        gap: 40px;
+    }
+}
+.social-icons a {
+    font-size: 19px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-4px);
+}
+
+.social-icons .youtube:hover {
+    color: #ff0000;
+}
+
+.social-icons .instagram:hover {
+    color: #e4405f;
+}
+
+.social-icons .facebook:hover {
+    color: #1877f2;
+}
+
+/* social icon contact */
+
+.social-iconscontact {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Desktop */
+}
+.social-iconscontact a {
+    font-size: 19px;
+    color: rgb(101, 122, 118);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-iconscontact a:hover {
+    transform: translateY(-4px);
+}
+
+.social-iconscontact .youtube:hover {
+    color: #ff0000;
+}
+
+.social-iconscontact .instagram:hover {
+    color: #e4405f;
+}
+
+.social-iconscontact .facebook:hover {
+    color: #1877f2;
+}
