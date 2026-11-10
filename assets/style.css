@@ -505,8 +505,8 @@ section.content {
 }
 
 .service-icon {
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
     border-radius: 14px;
     background: #eaf3ff;
     color: var(--blue);
@@ -716,7 +716,11 @@ footer {
 
     .destination-copy {
         width: 100%;
-        padding-top: 140px
+        margin-top: 80px
+    }
+
+    .destination-copy .btn {
+margin-top: 50px;
     }
 
     .destination-copy h1 {
@@ -1547,8 +1551,8 @@ footer a:hover {
 }
 
 .service-icon img {
-    width: 55px;
-    height: 55px;
+    width: 75px;
+    height: 75px;
     object-fit: contain;
     display: block;
 }
