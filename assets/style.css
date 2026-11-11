@@ -1591,12 +1591,12 @@ footer a:hover {
 /* Mobile View */
 @media (max-width: 768px) {
     .social-icons {
-       margin-left: 25px;
-        gap: 40px;
+       margin-left: 40px;
+        gap: 45px;
     }
 }
 .social-icons a {
-    font-size: 19px;
+    font-size: 25px;
     color: #ffffff;
     text-decoration: none;
     transition: 0.3s ease;
