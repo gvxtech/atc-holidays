@@ -1258,7 +1258,7 @@ footer a:hover {
 
     .destination-copy {
         width: 100%;
-        padding-top: 145px
+        padding-top: 245px
     }
 
     .destination-copy h1 {
@@ -1646,4 +1646,188 @@ footer a:hover {
 
 .social-iconscontact .facebook:hover {
     color: #1877f2;
+}
+
+
+/* =====================================
+   MOBILE SAFARI & RESPONSIVE FIX
+===================================== */
+
+@media screen and (max-width: 850px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+    }
+
+    .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 12px 0;
+        padding-top: max(12px, env(safe-area-inset-top));
+        background: rgba(9, 43, 43, 0.96);
+    }
+
+    .site-header .container {
+        width: 92%;
+    }
+
+    .brand img {
+        max-height: 45px;
+        width: auto;
+        display: block;
+        object-fit: contain;
+    }
+
+    .nav {
+        min-height: 48px;
+    }
+
+    .menu-toggle {
+        font-size: 27px;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        top: calc(100% + 10px);
+        z-index: 1001;
+    }
+
+    /* Destination hero */
+
+    .destination-hero {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 850px;
+        overflow: hidden;
+    }
+
+    .destination-layout {
+        min-height: 850px;
+        height: auto;
+        align-items: flex-start;
+    }
+
+    .destination-copy {
+        width: 100%;
+        padding-top: calc(110px + env(safe-area-inset-top));
+        margin: 0;
+    }
+
+    .destination-copy h1 {
+        font-size: clamp(52px, 13vw, 78px);
+        letter-spacing: -3px;
+        margin: 22px 0 15px;
+    }
+
+    .destination-copy p {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.8;
+        min-height: auto;
+    }
+
+    .destination-counter {
+        margin-top: 25px;
+    }
+
+    .destination-copy .btn {
+        margin-top: 22px;
+    }
+
+    .destination-shade {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(3, 25, 25, .72),
+                rgba(3, 25, 25, .20)
+            ),
+            linear-gradient(
+                0deg,
+                rgba(3, 25, 25, .55),
+                transparent 75%
+            );
+    }
+
+    /* Floating buttons */
+
+    .call {
+        right: 18px;
+        bottom: calc(95px + env(safe-area-inset-bottom));
+        width: 52px;
+        height: 52px;
+        z-index: 999;
+    }
+
+    .whatsapp {
+        right: 18px;
+        bottom: calc(20px + env(safe-area-inset-bottom));
+        width: 58px;
+        height: 58px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+    }
+
+}
+
+@media screen and (max-width: 560px) {
+
+    .destination-hero,
+    .destination-layout {
+        min-height: 820px;
+    }
+
+    .destination-copy {
+        padding-top: calc(250px + env(safe-area-inset-top));
+    }
+
+    .destination-copy h1 {
+        font-size: 54px;
+    }
+
+    .destination-copy p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .call {
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp {
+        width: 55px;
+        height: 55px;
+    }
+
+}
+
+/* Safari compatibility */
+
+@supports (-webkit-touch-callout: none) {
+
+    .destination-hero {
+        min-height: 100svh;
+    }
+
+    .destination-bg {
+        -webkit-transform: translateZ(0) scale(1.05);
+        backface-visibility: hidden;
+    }
+
 }
