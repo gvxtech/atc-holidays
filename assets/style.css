@@ -1831,3 +1831,1031 @@ footer a:hover {
     }
 
 }
+/* ==================================================
+   ATC HOLIDAYS - ABOUT PAGE
+   Theme: Dark Green / Fresh Green / White
+================================================== */
+
+.about-page {
+
+    --about-dark: #092b2b;
+    --about-green: #159b77;
+    --about-light: #57d6a5;
+    --about-bg: #f5f9f7;
+    --about-text: #707070;
+
+    background: #ffffff;
+    color: var(--about-dark);
+
+    overflow: hidden;
+
+}
+
+.about-page .container {
+
+    width: min(1200px, 90%);
+    margin: 0 auto;
+
+}
+
+
+/* ==================================================
+   COMMON SECTION LABEL
+================================================== */
+
+.about-label {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--about-green);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 20px;
+
+}
+
+.about-label span {
+
+    width: 25px;
+    height: 2px;
+
+    background: var(--about-green);
+
+    display: inline-block;
+
+}
+
+
+/* ==================================================
+   ABOUT INTRODUCTION
+================================================== */
+
+.about-intro {
+
+    padding: 90px 0;
+
+}
+
+.about-intro-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.05fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+}
+
+
+/* IMAGE */
+
+.about-image {
+
+    height: 550px;
+
+    position: relative;
+
+}
+
+.about-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.10);
+
+}
+
+
+/* IMAGE BADGE */
+
+.about-image-badge {
+
+    position: absolute;
+
+    left: -20px;
+    bottom: 25px;
+
+    background: #ffffff;
+
+    padding: 17px 22px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    border-radius: 9px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+
+}
+
+.badge-icon {
+
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--about-dark);
+
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 17px;
+
+}
+
+.about-image-badge strong {
+
+    display: block;
+
+    font-size: 14px;
+
+}
+
+.about-image-badge small {
+
+    display: block;
+
+    font-size: 10px;
+
+    color: #777777;
+
+    margin-top: 4px;
+
+}
+
+
+/* INTRO CONTENT */
+
+.about-heading {
+
+    font-size: clamp(36px, 4vw, 56px);
+
+    line-height: 1.13;
+
+    font-weight: 800;
+
+    color: var(--about-dark);
+
+    margin-bottom: 22px;
+
+}
+
+.about-heading span {
+
+    color: var(--about-green);
+
+}
+
+.about-lead {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: var(--about-green);
+
+    margin-bottom: 18px;
+
+}
+
+.about-content p:not(.about-lead) {
+
+    color: var(--about-text);
+
+    font-size: 13px;
+
+    line-height: 1.95;
+
+    margin-bottom: 14px;
+
+}
+
+
+/* COMMON BUTTON */
+
+.about-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: var(--about-dark);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    padding: 14px 23px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-top: 16px;
+
+    transition: .3s ease;
+
+}
+
+.about-btn:hover {
+
+    background: var(--about-green);
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* ==================================================
+   COMMON SECTION HEADING
+================================================== */
+
+.about-section-title {
+
+    margin-bottom: 45px;
+
+}
+
+.about-section-title h2,
+.why-content h2 {
+
+    font-size: clamp(32px, 4vw, 45px);
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    color: var(--about-dark);
+
+}
+
+.about-section-title h2 span,
+.why-content h2 span {
+
+    color: var(--about-green);
+
+}
+
+
+/* ==================================================
+   MISSION & VISION
+================================================== */
+
+.about-purpose {
+
+    padding: 85px 0;
+
+    background: var(--about-bg);
+
+}
+
+.purpose-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+.purpose-card {
+
+    background: #ffffff;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    border: 1px solid #edf0ee;
+
+    transition: .35s ease;
+
+}
+
+.purpose-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 40px rgba(9,43,43,.08);
+
+}
+
+.purpose-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+}
+
+.purpose-top > span {
+
+    color: #dce8e1;
+
+    font-size: 32px;
+
+    font-weight: 800;
+
+}
+
+.purpose-icon {
+
+    width: 55px;
+    height: 55px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: #e9f6ef;
+
+    color: var(--about-green);
+
+    border-radius: 10px;
+
+    font-size: 23px;
+
+}
+
+.purpose-card h3 {
+
+    font-size: 24px;
+
+    color: var(--about-dark);
+
+    margin-bottom: 13px;
+
+}
+
+.purpose-card p {
+
+    font-size: 13px;
+
+    color: var(--about-text);
+
+    line-height: 1.9;
+
+}
+
+
+/* ==================================================
+   OUR SERVICES - NUMBERED POINTERS
+================================================== */
+
+.about-offers {
+
+    padding: 90px 0;
+
+    background: #ffffff;
+
+}
+
+.offers-title {
+
+    text-align: center;
+
+}
+
+.offers-title p {
+
+    max-width: 560px;
+
+    margin: 15px auto 0;
+
+    color: var(--about-text);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* POINTER LIST */
+
+.service-pointers {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    border-top: 1px solid #e8eeea;
+
+}
+
+.service-pointer {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 23px 15px;
+
+    border-bottom: 1px solid #e8eeea;
+
+    transition: .3s ease;
+
+}
+
+.pointer-number {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: var(--about-green);
+
+    min-width: 35px;
+
+}
+
+.service-pointer h3 {
+
+    flex: 1;
+
+    margin: 0;
+
+    color: var(--about-dark);
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    transition: .3s ease;
+
+}
+
+.pointer-arrow {
+
+    width: 35px;
+    height: 35px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--about-green);
+
+    background: #edf7f2;
+
+    font-size: 13px;
+
+    transition: .3s ease;
+
+}
+
+
+/* POINTER HOVER */
+
+.service-pointer:hover {
+
+    padding-left: 25px;
+
+    background: #f8fbf9;
+
+}
+
+.service-pointer:hover h3 {
+
+    color: var(--about-green);
+
+}
+
+.service-pointer:hover .pointer-arrow {
+
+    background: var(--about-green);
+
+    color: #ffffff;
+
+    transform: rotate(-45deg);
+
+}
+
+
+/* EXPLORE SERVICES */
+
+.services-more {
+
+    text-align: center;
+
+    margin-top: 35px;
+
+}
+
+.services-more a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--about-dark);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    border-bottom: 1px solid var(--about-green);
+
+    padding-bottom: 7px;
+
+    transition: .3s ease;
+
+}
+
+.services-more a:hover {
+
+    color: var(--about-green);
+
+    gap: 18px;
+
+}
+
+
+/* ==================================================
+   WHY CHOOSE ATC
+================================================== */
+
+.about-why {
+
+    padding: 90px 0;
+
+    background: var(--about-bg);
+
+}
+
+.why-grid {
+
+    display: grid;
+
+    grid-template-columns: .9fr 1.1fr;
+
+    gap: 65px;
+
+    align-items: center;
+
+}
+
+.why-content > p {
+
+    color: var(--about-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    margin-top: 20px;
+
+    max-width: 430px;
+
+}
+
+
+/* CHECKLIST */
+
+.why-list {
+
+    padding: 25px 30px;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+}
+
+.why-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #edf0ee;
+
+}
+
+.why-item:last-child {
+
+    border-bottom: none;
+
+}
+
+.why-check {
+
+    min-width: 30px;
+    height: 30px;
+
+    background: #e7f5ed;
+
+    color: var(--about-green);
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    font-size: 12px;
+
+}
+
+.why-item h4 {
+
+    color: var(--about-dark);
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+
+}
+
+.why-item p {
+
+    color: #888888;
+
+    font-size: 11px;
+
+}
+
+
+/* ==================================================
+   FINAL CALL TO ACTION
+================================================== */
+
+.about-cta {
+
+    padding: 90px 0;
+
+    background: var(--about-dark);
+
+    text-align: center;
+
+    color: #ffffff;
+
+}
+
+.about-cta-content {
+
+    max-width: 750px;
+
+    margin: auto;
+
+}
+
+.cta-label {
+
+    color: var(--about-light);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+}
+
+.about-cta h2 {
+
+    font-size: clamp(35px, 5vw, 55px);
+
+    line-height: 1.2;
+
+    margin: 22px 0;
+
+    font-weight: 800;
+
+}
+
+.about-cta h2 span {
+
+    color: var(--about-light);
+
+}
+
+.about-cta-content > p {
+
+    color: #bdcec7;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+}
+
+
+/* CTA BUTTON */
+
+.cta-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 25px;
+
+    background: var(--about-green);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: .3s ease;
+
+}
+
+.cta-button:hover {
+
+    background: #ffffff;
+
+    color: var(--about-dark);
+
+    transform: translateY(-4px);
+
+}
+
+
+/* BRAND */
+
+.cta-brand {
+
+    margin-top: 45px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+.cta-brand small {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #a9c1b7;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* ==================================================
+   TABLET RESPONSIVE
+================================================== */
+
+@media(max-width: 992px) {
+
+    .about-intro-grid {
+
+        gap: 40px;
+
+    }
+
+    .about-image {
+
+        height: 460px;
+
+    }
+
+    .why-grid {
+
+        gap: 35px;
+
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE RESPONSIVE
+================================================== */
+
+@media(max-width: 768px) {
+
+    .about-intro {
+
+        padding: 60px 0;
+
+    }
+
+    .about-intro-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+    .about-image {
+
+        height: 360px;
+
+    }
+
+    .about-image-badge {
+
+        left: 12px;
+
+        bottom: 15px;
+
+    }
+
+    .about-heading {
+
+        font-size: 38px;
+
+    }
+
+    .about-purpose,
+    .about-offers,
+    .about-why {
+
+        padding: 65px 0;
+
+    }
+
+    .purpose-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .why-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+    .about-section-title {
+
+        margin-bottom: 35px;
+
+    }
+
+    .about-cta {
+
+        padding: 70px 0;
+
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media(max-width: 480px) {
+
+    .about-page .container {
+
+        width: 91%;
+
+    }
+
+    .about-image {
+
+        height: 290px;
+
+    }
+
+    .about-heading {
+
+        font-size: 33px;
+
+    }
+
+    .about-lead {
+
+        font-size: 16px;
+
+    }
+
+    .about-section-title h2,
+    .why-content h2 {
+
+        font-size: 31px;
+
+    }
+
+    .purpose-card {
+
+        padding: 25px;
+
+    }
+
+    .service-pointer {
+
+        gap: 15px;
+
+        padding: 20px 5px;
+
+    }
+
+    .service-pointer h3 {
+
+        font-size: 14px;
+
+    }
+
+    .pointer-number {
+
+        font-size: 12px;
+
+        min-width: 25px;
+
+    }
+
+    .pointer-arrow {
+
+        width: 30px;
+        height: 30px;
+
+        font-size: 11px;
+
+    }
+
+    .service-pointer:hover {
+
+        padding-left: 10px;
+
+    }
+
+    .why-list {
+
+        padding: 15px;
+
+    }
+
+    .about-cta h2 {
+
+        font-size: 33px;
+
+    }
+
+    .cta-label {
+
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+}
