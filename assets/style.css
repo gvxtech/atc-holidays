@@ -910,7 +910,7 @@ body {
 
 .nav-links {
     gap: clamp(14px, 2vw, 28px);
-    font-size: 12px;
+    font-size: 15px;
     letter-spacing: .2px
 }
 
@@ -2859,3 +2859,527 @@ footer a:hover {
     }
 
 }
+
+/* nav-buttons */
+
+.destination-controls {
+    position: absolute;
+    right: 40px;
+    bottom: 65px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 10;
+}
+
+.destination-arrow {
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.destination-arrow:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.08);
+}
+
+@media(max-width:768px) {
+
+    .destination-controls {
+        right: 20px;
+        bottom: 35px;
+        gap: 10px;
+    }
+
+    .destination-arrow {
+        width: 43px;
+        height: 43px;
+        font-size: 14px;
+    }
+
+}
+
+/* ==========================================
+   ATC HOLIDAYS - RESPONSIVE CSS CORRECTIONS
+   ========================================== */
+
+
+/* Prevent horizontal overflow */
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* ==========================================
+   SERVICE DETAIL HERO
+   ========================================== */
+
+.service-detail-hero {
+
+    position: relative;
+    width: 100%;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+
+}
+
+.service-detail-hero-content {
+
+    width: min(1180px, 92%);
+    margin: auto;
+
+    position: relative;
+    z-index: 2;
+
+}
+
+.service-detail-hero h1 {
+
+    max-width: 850px;
+
+    line-height: 1.12;
+    overflow-wrap: break-word;
+
+}
+
+.service-detail-hero p {
+
+    max-width: 650px;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================
+   SERVICE DETAIL CONTENT
+   ========================================== */
+
+.service-detail-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(280px, .8fr);
+
+    gap: 55px;
+
+    align-items: start;
+
+}
+
+.service-detail-copy {
+
+    min-width: 0;
+
+}
+
+.service-detail-copy > p {
+
+    line-height: 1.9;
+
+}
+
+.service-enquiry-card {
+
+    position: sticky;
+    top: 110px;
+
+    min-width: 0;
+
+}
+
+.service-enquiry-card .btn {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+}
+
+.package-highlights ul {
+
+    padding: 0;
+    list-style: none;
+
+}
+
+.package-highlights li {
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ==========================================
+   NAVIGATION RESPONSIVE FIX
+   ========================================== */
+
+@media (max-width: 850px) {
+
+    .site-header.inner {
+
+        position: relative;
+        z-index: 1000;
+
+    }
+
+    .nav {
+
+        position: relative;
+
+        min-height: 48px;
+
+    }
+
+    .menu-toggle {
+
+        display: block;
+
+        position: relative;
+        z-index: 1002;
+
+        cursor: pointer;
+
+    }
+
+    .nav-links {
+
+        display: none;
+
+        position: absolute;
+
+        top: calc(100% + 10px);
+
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background: #092b2b;
+
+        border: 1px solid rgba(255,255,255,.12);
+
+        border-radius: 15px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        z-index: 1001;
+
+        box-shadow: 0 20px 45px rgba(0,0,0,.25);
+
+    }
+
+    .nav-links.open {
+
+        display: flex;
+
+    }
+
+    .nav-links > a {
+
+        display: block;
+
+        padding: 12px 14px;
+
+    }
+
+    .nav-links .nav-cta {
+
+        text-align: center;
+
+        margin-top: 8px;
+
+    }
+
+    .social-icons {
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 30px;
+
+        margin: 15px 0 5px;
+
+    }
+
+    .social-icons a {
+
+        font-size: 23px;
+
+    }
+
+}
+
+
+/* ==========================================
+   TABLET VIEW
+   ========================================== */
+
+@media (max-width: 850px) {
+
+    .service-detail-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+    .service-enquiry-card {
+
+        position: relative;
+
+        top: auto;
+
+        width: 100%;
+
+    }
+
+    .service-detail-hero {
+
+        min-height: 430px;
+
+        height: auto;
+
+    }
+
+    .service-detail-hero-content {
+
+        padding-top: 85px;
+        padding-bottom: 65px;
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE VIEW
+   ========================================== */
+
+@media (max-width: 560px) {
+
+    .service-detail-hero {
+
+        min-height: 390px;
+
+        height: auto;
+
+        background-position: center center;
+
+    }
+
+    .service-detail-hero-content {
+
+        padding-top: 75px;
+        padding-bottom: 50px;
+
+    }
+
+    .service-detail-hero h1 {
+
+        font-size: clamp(34px, 9vw, 45px);
+
+        letter-spacing: -1.5px;
+
+        margin: 18px 0;
+
+    }
+
+    .service-detail-hero p {
+
+        font-size: 13px;
+
+        line-height: 1.8;
+
+    }
+
+    .service-detail-hero .breadcrumbs {
+
+        font-size: 9px;
+
+        line-height: 1.8;
+
+        letter-spacing: 1px;
+
+    }
+
+    .service-detail-content {
+
+        padding: 55px 0;
+
+    }
+
+    .service-detail-copy .page-title {
+
+        font-size: 34px;
+
+        line-height: 1.2;
+
+    }
+
+    .service-detail-copy > p {
+
+        font-size: 14px;
+
+        line-height: 1.85;
+
+    }
+
+    .package-highlights {
+
+        padding: 22px;
+
+        margin: 30px 0;
+
+    }
+
+    .package-highlights h2 {
+
+        font-size: 21px;
+
+    }
+
+    .package-highlights ul {
+
+        grid-template-columns: 1fr;
+
+        gap: 13px;
+
+    }
+
+    .service-enquiry-card {
+
+        padding: 23px;
+
+    }
+
+    .service-enquiry-card h2 {
+
+        font-size: 23px;
+
+    }
+
+    .service-enquiry-card p {
+
+        font-size: 13px;
+
+    }
+
+    .service-detail-copy .btn {
+
+        font-size: 13px;
+
+        padding: 14px 18px;
+
+    }
+
+}
+
+
+/* ==========================================
+   FLOATING CALL & WHATSAPP BUTTONS
+   ========================================== */
+
+.call,
+.whatsapp {
+
+    z-index: 999;
+
+}
+
+@media (max-width: 560px) {
+
+    .call {
+
+        right: 18px;
+
+        bottom: calc(88px + env(safe-area-inset-bottom));
+
+        width: 49px;
+        height: 49px;
+
+    }
+
+    .whatsapp {
+
+        right: 18px;
+
+        bottom: calc(20px + env(safe-area-inset-bottom));
+
+        width: 55px;
+        height: 55px;
+
+    }
+
+}
+
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+
+    }
+
+}
+

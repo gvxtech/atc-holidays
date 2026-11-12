@@ -11,6 +11,139 @@
     <!-- Website Favicon -->
     <link rel="icon" type="image/png" href="assets/images/faviconi.png">
     <meta name="theme-color" content="#092b2b">
+
+    <style>
+        /* ATC HOLIDAYS - OUR JOURNEY */
+        .atc-history {
+            position: relative;
+            overflow: hidden;
+            padding: 90px 0;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(198, 160, 104, .12), transparent 32%),
+                linear-gradient(135deg, #092b2b 0%, #0d3936 55%, #092b2b 100%);
+            color: #fff;
+        }
+
+        .atc-history-inner {
+            display: grid;
+            grid-template-columns: minmax(230px, .8fr) minmax(0, 1.5fr);
+            gap: 70px;
+            align-items: center;
+        }
+
+        .atc-history-year {
+            position: relative;
+            padding: 30px 0 30px 30px;
+            border-left: 2px solid #d7b47c;
+        }
+
+        .atc-history-year small {
+            display: block;
+            margin-bottom: 8px;
+            color: #d7b47c;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .atc-history-year strong {
+            display: block;
+            color: #fff;
+            font-size: clamp(64px, 8vw, 104px);
+            line-height: .95;
+            letter-spacing: -5px;
+        }
+
+        .atc-history-year span {
+            display: block;
+            margin-top: 15px;
+            color: rgba(255,255,255,.72);
+            font-size: 14px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .atc-history-copy .history-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            color: #d7b47c;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .atc-history-copy .history-eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 1px;
+            background: #d7b47c;
+        }
+
+        .atc-history-copy h2 {
+            margin: 0 0 20px;
+            color: #fff;
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.15;
+        }
+
+        .atc-history-copy h2 span {
+            color: #d7b47c;
+        }
+
+        .atc-history-copy p {
+            max-width: 720px;
+            margin: 0 0 14px;
+            color: rgba(255,255,255,.78);
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+        .atc-history-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 12px;
+            padding: 11px 16px;
+            border: 1px solid rgba(215,180,124,.35);
+            border-radius: 999px;
+            background: rgba(255,255,255,.06);
+            color: #f2d5a8;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .atc-history-note i {
+            color: #d7b47c;
+        }
+
+        @media (max-width: 768px) {
+            .atc-history {
+                padding: 65px 0;
+            }
+
+            .atc-history-inner {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .atc-history-year {
+                padding: 8px 0 8px 22px;
+            }
+
+            .atc-history-year strong {
+                font-size: 76px;
+            }
+
+            .atc-history-copy p {
+                font-size: 15px;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -18,7 +151,7 @@
     <header class="site-header inner">
         <div class="container nav"><a class="brand" href="index.html">
     <img src="assets/images/logo-top2.png" alt="ATC Holidays" 
-         style="height: 55px; width: auto; object-fit: contain;">
+         style="height: 75px; width: auto; object-fit: contain;">
 </a><button class="menu-toggle" aria-label="Open navigation">☰</button>
             <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a
                     href="services.html">Services</a><a href="packages.html">Tour Packages</a><a
@@ -156,6 +289,53 @@
 
     </section>
 
+
+
+    <!-- OUR JOURNEY - SINCE 2007 -->
+    <section class="atc-history" aria-labelledby="atcHistoryTitle">
+        <div class="container atc-history-inner">
+
+            <div class="atc-history-year">
+                <small>Our journey began</small>
+                <strong>2007</strong>
+                <span>Growing with every journey</span>
+            </div>
+
+            <div class="atc-history-copy">
+                <span class="history-eyebrow">Our Journey</span>
+                <h2 id="atcHistoryTitle">
+                    From a Travel Beginning<br>
+                    <span>to Complete Travel Solutions.</span>
+                </h2>
+
+                <p>
+                    ATC Holidays began its journey in 2007 as a tourism and travel
+                    service provider, built around a simple purpose: helping people
+                    travel with comfort, confidence and peace of mind.
+                </p>
+
+                <p>
+                    As the years went by, we continued to grow and develop, expanding
+                    our services to meet changing travel and transportation needs.
+                    Today, our offerings extend beyond holiday planning to include
+                    cab and coach rentals, group and school transportation,
+                    corporate travel and hospitality services.
+                </p>
+
+                <p>
+                    Although our services have evolved, our commitment remains the
+                    same — dependable support, thoughtful planning and better
+                    experiences for every journey.
+                </p>
+
+                <div class="atc-history-note">
+                    <i class="fa-solid fa-route" aria-hidden="true"></i>
+                    Serving journeys and creating memories since 2007
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- MISSION & VISION -->
     <section class="about-purpose">
@@ -317,7 +497,7 @@
 
                     <span class="pointer-number">05</span>
 
-                    <h3>Logistics Services</h3>
+                    <h3>Corporate Transportation</h3>
 
                     <span class="pointer-arrow">
                         <i class="fa-solid fa-arrow-right"></i>
@@ -538,7 +718,7 @@
             <div class="footer-grid">
                 <div><a class="brand" href="index.html">
     <img src="assets/images/footer logo.png" alt="ATC Holidays"
-         style="height: 80px; width: auto; object-fit: contain;">
+         style="height: 100px; width: auto; object-fit: contain;">
 </a>
                     <p>Thoughtfully planned journeys, memorable places and experiences worth travelling for. Replace
                         with your company introduction.</p>
@@ -557,7 +737,7 @@
                     <p><a href="#">Facebook</a><br>
                         <a href="https://www.instagram.com/a.t.c_holidays?rpxt=MW9kOWhrcmNjaXM2bQ==">Instagram</a><br>
                         <a href="https://www.youtube.com/@ATCHOLIDAYS">Youtube</a><br>
-                        <a href="mailto:hello@example.com">hello@example.com</a>
+                        <a href="mailto:Info@atcholidays.com">Info@atcholidays.com</a>
                     </p>
                 </div>
             </div>
