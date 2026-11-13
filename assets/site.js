@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Total destination counter
     const totalNumber = hero.querySelector('.destination-counter span:last-child');
 
-    // Navigation buttons (if added to HTML)
+    // Navigation buttons
     const prevButton = hero.querySelector('#prevDestination');
     const nextButton = hero.querySelector('#nextDestination');
 
@@ -81,6 +81,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Automatic slide duration
     const slideDuration = 3200;
+
+
+    // ========================================
+    // TITLE WITH TWO DIFFERENT FONTS
+    // ========================================
+
+    function updateTitle(name) {
+
+        if (!title) return;
+
+        const words = (name || '').trim().split(/\s+/);
+
+        // First word
+        const firstWord = document.createElement('span');
+        firstWord.className = 'tour-font';
+        firstWord.textContent = words[0] || '';
+
+        // Remaining words
+        const remainingWords = document.createElement('span');
+        remainingWords.className = 'package-font';
+        remainingWords.textContent = words.slice(1).join(' ');
+
+        title.replaceChildren(firstWord, remainingWords);
+    }
 
 
     // ========================================
@@ -105,9 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
 
-            if (title) {
-                title.textContent = name || '';
-            }
+            // Update title with two fonts
+            updateTitle(name);
 
             if (desc) {
                 desc.textContent = description || '';
@@ -215,12 +238,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (diffX < 0) {
 
-                // Swipe left = Next
                 show(active + 1);
 
             } else {
 
-                // Swipe right = Previous
                 show(active - 1);
 
             }
@@ -239,7 +260,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ========================================
     // AUTOMATIC SLIDING
-    // NEVER STOPS AFTER MANUAL NAVIGATION
     // ========================================
 
     setInterval(() => {

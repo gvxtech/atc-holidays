@@ -3382,4 +3382,19 @@ img {
     }
 
 }
+/* First word */
+.tour-font {
+    font-family: 'Eurostile', sans-serif;
+    font-weight: 700;
+    display: inline-block;
+}
 
+/* Remaining words */
+.package-font {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+     font-size: 0.75em;
+    display: inline-block;
+    margin-left: 10px;
+}
