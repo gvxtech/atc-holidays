@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let active = 0;
 
     // Automatic slide duration
-    const slideDuration = 3200;
+    const slideDuration = 5200;
 
 
     // ========================================

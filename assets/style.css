@@ -2894,7 +2894,7 @@ footer a:hover {
     transform: scale(1.08);
 }
 
-@media(max-width:768px) {
+/* @media(max-width:768px) {
 
     .destination-controls {
         right: 20px;
@@ -2906,6 +2906,22 @@ footer a:hover {
         width: 43px;
         height: 43px;
         font-size: 14px;
+    }
+
+} */
+
+@media (max-width: 768px) {
+
+    /* Hide navigation buttons on mobile */
+    .destination-controls {
+        display: none !important;
+    }
+
+    /* Enable touch gestures */
+    .destination-hero {
+        touch-action: pan-y;
+        user-select: none;
+        -webkit-user-select: none;
     }
 
 }
@@ -3392,12 +3408,17 @@ img {
 
 /* Second word */
 .package-font {
-    font-family: 'Eurostile', sans-serif;
+    /* font-family: 'Eurostile', sans-serif;
     font-weight: 700;
     font-size: 0.55em;
     display: block;
     margin-left: 0;
-    line-height: 1.2;
+    line-height: 1.2; */
+     font-family: 'Eurostile', sans-serif;
+    font-weight: 500;
+    display: block;
+    line-height: 1.1;
+    font-size: 0.55em;
 }
 
 /* BLOG DETAIL */
