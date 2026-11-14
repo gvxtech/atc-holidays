@@ -1678,7 +1678,7 @@ footer a:hover {
     }
 
     .brand img {
-        max-height: 55px;
+        max-height: 105px;
         width: auto;
         display: block;
         object-fit: contain;
