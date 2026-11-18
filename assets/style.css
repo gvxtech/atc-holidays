@@ -521,7 +521,7 @@ section.content {
 
 .service-card p,
 .copy p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
     color: var(--muted)
 }
@@ -1871,7 +1871,7 @@ footer a:hover {
 
     color: var(--about-green);
 
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 800;
 
     letter-spacing: 1.8px;
@@ -2040,7 +2040,7 @@ footer a:hover {
 
     color: var(--about-text);
 
-    font-size: 13px;
+    font-size: 16px;
 
     line-height: 1.95;
 
@@ -2218,7 +2218,7 @@ footer a:hover {
 
 .purpose-card p {
 
-    font-size: 13px;
+    font-size: 18px;
 
     color: var(--about-text);
 
@@ -2253,7 +2253,7 @@ footer a:hover {
 
     color: var(--about-text);
 
-    font-size: 13px;
+    font-size: 17px;
 
     line-height: 1.8;
 
@@ -2308,7 +2308,7 @@ footer a:hover {
 
     color: var(--about-dark);
 
-    font-size: 18px;
+    font-size: 28px;
 
     font-weight: 700;
 
@@ -2436,7 +2436,7 @@ footer a:hover {
 
     color: var(--about-text);
 
-    font-size: 13px;
+    font-size: 16px;
 
     line-height: 1.9;
 
@@ -2502,7 +2502,7 @@ footer a:hover {
 
     color: var(--about-dark);
 
-    font-size: 13px;
+    font-size: 20px;
 
     margin-bottom: 5px;
 
@@ -2512,7 +2512,7 @@ footer a:hover {
 
     color: #888888;
 
-    font-size: 11px;
+    font-size: 15px;
 
 }
 
@@ -2811,7 +2811,7 @@ footer a:hover {
 
     .service-pointer h3 {
 
-        font-size: 14px;
+        font-size: 20px;
 
     }
 
