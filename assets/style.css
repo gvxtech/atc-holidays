@@ -136,7 +136,7 @@ a {
 .eyebrow {
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     color: #ffca6b
 }
@@ -1424,7 +1424,7 @@ footer a:hover {
     letter-spacing:-.7px;
 }
 .package-highlights ul { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.package-highlights li { display:flex; gap:10px; align-items:flex-start; color:var(--muted); font-size:13px; line-height:1.6; }
+.package-highlights li { display:flex; gap:10px; align-items:flex-start; color:var(--muted); font-size:15px; line-height:1.6; }
 .package-highlights li span { color:#0c8b69; font-weight:900; }
 .itinerary-item {
     display:grid;
@@ -1489,7 +1489,7 @@ footer a:hover {
 .service-card .more span { transition:transform .25s; }
 .service-card:hover .more span { transform:translateX(5px); }
 .service-detail-layout { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(280px,.8fr); gap:55px; align-items:start; }
-.service-detail-copy > p { color:var(--muted); font-size:15px; line-height:1.9; }
+.service-detail-copy > p { color:var(--muted); font-size:18px; line-height:1.9; }
 .service-enquiry-card { position:sticky; top:110px; padding:30px; border:1px solid #e7edf1; border-radius:18px; background:#fff; box-shadow:0 16px 42px rgba(8,39,37,.10); }
 .service-enquiry-card h2 { margin:16px 0 10px; font:800 25px Manrope; }
 .service-enquiry-card p { color:var(--muted); font-size:14px; line-height:1.8; }
@@ -3980,3 +3980,143 @@ img {
         height: 55px;
     }
 } */
+
+/* =====================================
+   PREMIUM SERVICE CARD HOVER EFFECT
+===================================== */
+/* =====================================
+   PREMIUM SERVICE CARD HOVER EFFECT
+===================================== */
+
+.services-grid .service-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+
+    border: 1px solid rgba(11, 119, 112, 0.15);
+    will-change: transform;
+}
+
+/* Top glowing line */
+
+.services-grid .service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #0b7770,
+        #16a69b,
+        #ffffff
+    );
+
+    transition: width 0.4s ease;
+}
+
+/* =====================================
+   DESKTOP HOVER EFFECT
+===================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .services-grid .service-card:hover {
+        transform: translateY(-12px);
+
+        border-color: #0b7770;
+
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.25),
+            0 0 20px rgba(11, 119, 112, 0.20);
+    }
+
+    .services-grid .service-card:hover::before {
+        width: 100%;
+    }
+
+    /* Image zoom */
+
+    .services-grid .service-card:hover .service-icon img {
+        transform: scale(1.12);
+    }
+
+    /* Heading color */
+
+    .services-grid .service-card:hover h3 {
+        color: #0b7770;
+    }
+
+    /* Arrow movement */
+
+    .services-grid .service-card:hover .more span {
+        display: inline-block;
+        transform: translateX(6px);
+    }
+}
+
+/* =====================================
+   ICON ANIMATION
+===================================== */
+
+.services-grid .service-icon {
+    overflow: hidden;
+}
+
+.services-grid .service-icon img {
+    transition: transform 0.5s ease;
+}
+
+/* Heading animation */
+
+.services-grid .service-card h3 {
+    transition: color 0.3s ease;
+}
+
+/* Link animation */
+
+.services-grid .service-card .more span {
+    transition: transform 0.3s ease;
+}
+
+/* =====================================
+   MOBILE TOUCH EFFECT
+===================================== */
+
+@media (hover: none) {
+
+    .services-grid .service-card:active {
+        transform: scale(0.97);
+
+        border-color: #0b7770;
+
+        box-shadow:
+            0 8px 25px rgba(11, 119, 112, 0.20);
+    }
+
+    .services-grid .service-card:active::before {
+        width: 100%;
+    }
+
+    .services-grid .service-card:active h3 {
+        color: #0b7770;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .services-grid .service-card,
+    .services-grid .service-card *,
+    .services-grid .service-card::before {
+        transition: none !important;
+    }
+}
