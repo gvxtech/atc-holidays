@@ -50,42 +50,43 @@ document.addEventListener('DOMContentLoaded', () => {
 // HTML DATA ATTRIBUTES - NO JS ARRAY
 // ============================================
 
+// ============================================
+// ATC HOLIDAYS - HORIZONTAL HERO SLIDER
+// ============================================
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const hero = document.querySelector('#destinationHero');
 
     if (!hero) return;
 
-    // Get all destination backgrounds from HTML
-    const bgs = [...hero.querySelectorAll('.destination-bg')];
+    const slides = [...hero.querySelectorAll('.destination-bg')];
 
-    if (!bgs.length) return;
+    if (!slides.length) return;
 
-    // Destination content elements
+
+    // Elements
     const title = hero.querySelector('#destinationTitle');
     const desc = hero.querySelector('#destinationDescription');
     const number = hero.querySelector('#currentNumber');
+    const totalNumber = hero.querySelector('#totalNumber');
     const explore = hero.querySelector('#destinationExplore');
-
-    // Progress bar
     const progress = hero.querySelector('.progress-fill');
 
-    // Total destination counter
-    const totalNumber = hero.querySelector('.destination-counter span:last-child');
-
-    // Navigation buttons
     const prevButton = hero.querySelector('#prevDestination');
     const nextButton = hero.querySelector('#nextDestination');
 
-    let active = 0;
 
-    // Automatic slide duration
+    let current = 0;
+    let isAnimating = false;
+
     const slideDuration = 5200;
+    const transitionDuration = 800;
 
 
-    // ========================================
-    // TITLE WITH TWO DIFFERENT FONTS
-    // ========================================
+    // ============================================
+    // TITLE
+    // ============================================
 
     function updateTitle(name) {
 
@@ -93,13 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const words = (name || '').trim().split(/\s+/);
 
-        // First word
         const firstWord = document.createElement('span');
+
         firstWord.className = 'tour-font';
         firstWord.textContent = words[0] || '';
 
-        // Remaining words
         const remainingWords = document.createElement('span');
+
         remainingWords.className = 'package-font';
         remainingWords.textContent = words.slice(1).join(' ');
 
@@ -107,130 +108,185 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ========================================
-    // SHOW DESTINATION
-    // ========================================
+    // ============================================
+    // UPDATE CONTENT
+    // ============================================
 
-    function show(i) {
+    function updateContent(index) {
 
-        // Loop destinations
-        active = (i + bgs.length) % bgs.length;
+        const slide = slides[index];
 
-        // Read content directly from HTML
-        const current = bgs[active];
+        if (!slide) return;
 
-        const name = current.dataset.name;
-        const description = current.dataset.description;
-        const url = current.dataset.url;
+        const name = slide.dataset.name;
+        const description = slide.dataset.description;
+        const url = slide.dataset.url;
 
-        // Content animation
-        if (title) title.classList.add('changing');
-        if (desc) desc.classList.add('changing');
+        updateTitle(name);
 
-        setTimeout(() => {
-
-            // Update title with two fonts
-            updateTitle(name);
-
-            if (desc) {
-                desc.textContent = description || '';
-            }
-
-            if (explore && url) {
-                explore.href = url;
-            }
-
-            if (number) {
-                number.textContent =
-                    String(active + 1).padStart(2, '0');
-            }
-
-            if (title) title.classList.remove('changing');
-            if (desc) desc.classList.remove('changing');
-
-        }, 220);
-
-
-        // Update background images
-        bgs.forEach((bg, n) => {
-
-            bg.classList.toggle('active', n === active);
-
-        });
-
-
-        // Update total destination count
-        if (totalNumber) {
-            totalNumber.textContent =
-                String(bgs.length).padStart(2, '0');
+        if (desc) {
+            desc.textContent = description || '';
         }
 
+        if (explore && url) {
+            explore.href = url;
+        }
 
-        // Update progress bar
+        if (number) {
+            number.textContent = String(index + 1).padStart(2, '0');
+        }
+
+    }
+
+
+    // ============================================
+    // HORIZONTAL SLIDE TRANSITION
+    // ============================================
+
+    function showSlide(index, direction = 1) {
+
+        if (isAnimating || index === current) return;
+
+        isAnimating = true;
+
+        const previous = slides[current];
+        const next = slides[index];
+
+        // Prepare incoming slide
+        next.style.transition = 'none';
+
+        next.style.transform =
+            direction > 0 ? 'translateX(100%)' : 'translateX(-100%)';
+
+        next.style.opacity = '1';
+
+        next.classList.add('active');
+
+        // Force browser layout
+        next.offsetHeight;
+
+        // Animate both slides
+        next.style.transition =
+            `transform ${transitionDuration}ms cubic-bezier(0.22, 1, 0.36, 1)`;
+
+        previous.style.transition =
+            `transform ${transitionDuration}ms cubic-bezier(0.22, 1, 0.36, 1)`;
+
+        next.style.transform = 'translateX(0)';
+
+        previous.style.transform =
+            direction > 0 ? 'translateX(-100%)' : 'translateX(100%)';
+
+
+        // Update text content
+        updateContent(index);
+
+
+        // Update current slide
+        current = index;
+
+
+        // Progress bar
         if (progress) {
 
             progress.style.width =
-                ((active + 1) / bgs.length * 100) + '%';
+                ((current + 1) / slides.length * 100) + '%';
 
         }
 
+
+        // Finish transition
+        setTimeout(() => {
+
+            slides.forEach((slide, i) => {
+
+                if (i !== current) {
+
+                    slide.classList.remove('active');
+
+                    slide.style.transition = 'none';
+                    slide.style.transform = 'translateX(100%)';
+                    slide.style.opacity = '0';
+
+                }
+
+            });
+
+            previous.style.transition = 'none';
+
+            isAnimating = false;
+
+        }, transitionDuration);
+
     }
 
 
-    // ========================================
-    // DESKTOP PREVIOUS BUTTON
-    // ========================================
+    // ============================================
+    // NEXT
+    // ============================================
 
-    if (prevButton) {
+    function nextSlide() {
 
-        prevButton.addEventListener('click', () => {
+        const next = (current + 1) % slides.length;
 
-            show(active - 1);
-
-        });
+        showSlide(next, 1);
 
     }
 
 
-    // ========================================
-    // DESKTOP NEXT BUTTON
-    // ========================================
+    // ============================================
+    // PREVIOUS
+    // ============================================
+
+    function prevSlide() {
+
+        const previous = (current - 1 + slides.length) % slides.length;
+
+        showSlide(previous, -1);
+
+    }
+
+
+    // ============================================
+    // BUTTON EVENTS
+    // ============================================
 
     if (nextButton) {
 
-        nextButton.addEventListener('click', () => {
+        nextButton.addEventListener('click', nextSlide);
 
-            show(active + 1);
+    }
 
-        });
+    if (prevButton) {
+
+        prevButton.addEventListener('click', prevSlide);
 
     }
 
 
-    // ========================================
-    // MOBILE SWIPE NAVIGATION
-    // ========================================
+    // ============================================
+    // MOBILE SWIPE
+    // ============================================
 
     let touchStartX = 0;
     let touchStartY = 0;
 
-    hero.addEventListener('touchstart', e => {
+    hero.addEventListener('touchstart', event => {
 
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
+        touchStartX = event.changedTouches[0].screenX;
+        touchStartY = event.changedTouches[0].screenY;
 
     }, { passive: true });
 
 
-    hero.addEventListener('touchend', e => {
+    hero.addEventListener('touchend', event => {
 
-        const touchEndX = e.changedTouches[0].screenX;
-        const touchEndY = e.changedTouches[0].screenY;
+        const touchEndX = event.changedTouches[0].screenX;
+        const touchEndY = event.changedTouches[0].screenY;
 
         const diffX = touchEndX - touchStartX;
         const diffY = touchEndY - touchStartY;
 
-        // Detect horizontal swipe only
         if (
             Math.abs(diffX) > 50 &&
             Math.abs(diffX) > Math.abs(diffY)
@@ -238,11 +294,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (diffX < 0) {
 
-                show(active + 1);
+                nextSlide();
 
             } else {
 
-                show(active - 1);
+                prevSlide();
 
             }
 
@@ -251,25 +307,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
 
 
-    // ========================================
-    // INITIAL DESTINATION
-    // ========================================
+    // ============================================
+    // INITIALIZATION
+    // ============================================
 
-    show(0);
+    slides.forEach((slide, index) => {
+
+        slide.style.transform =
+            index === 0 ? 'translateX(0)' : 'translateX(100%)';
+
+        slide.style.opacity = index === 0 ? '1' : '0';
+
+    });
 
 
-    // ========================================
+    updateContent(0);
+
+    if (totalNumber) {
+        totalNumber.textContent =
+            String(slides.length).padStart(2, '0');
+    }
+
+
+    if (progress) {
+        progress.style.width = (100 / slides.length) + '%';
+    }
+
+
+    // ============================================
     // AUTOMATIC SLIDING
-    // ========================================
+    // ============================================
 
     setInterval(() => {
 
-        show(active + 1);
+        if (!isAnimating) {
+            nextSlide();
+        }
 
     }, slideDuration);
 
 });
-
 
 // ============================================
 // PREMIUM PAGE INTERACTIONS
