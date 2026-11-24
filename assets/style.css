@@ -113,6 +113,21 @@ a {
     transform: scale(1.055)
 } */
 
+.destination-copy {
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.destination-copy.text-exit {
+    opacity: 0;
+    transform: translateX(-40px);
+}
+
+.destination-copy.text-enter {
+    opacity: 0;
+    transform: translateX(40px);
+}
+
+
 .destination-bg {
     position: absolute;
     inset: 0;
@@ -3439,11 +3454,10 @@ img {
     display: block;
     margin-left: 0;
     line-height: 1.2; */
-     font-family: 'Eurostile', sans-serif;
-    font-weight: 500;
+    font-family: 'Eurostile', sans-serif;
+    font-weight: 700;
     display: block;
     line-height: 1.1;
-    font-size: 0.75em;
 }
 
 /* BLOG DETAIL */

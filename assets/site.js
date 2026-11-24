@@ -143,82 +143,142 @@ document.addEventListener('DOMContentLoaded', () => {
     // HORIZONTAL SLIDE TRANSITION
     // ============================================
 
-    function showSlide(index, direction = 1) {
+   function showSlide(index, direction = 1) {
 
-        if (isAnimating || index === current) return;
+    if (isAnimating || index === current) return;
 
-        isAnimating = true;
+    isAnimating = true;
 
-        const previous = slides[current];
-        const next = slides[index];
+    const previous = slides[current];
+    const next = slides[index];
 
-        // Prepare incoming slide
-        next.style.transition = 'none';
+    const copy = hero.querySelector('.destination-copy');
 
-        next.style.transform =
-            direction > 0 ? 'translateX(100%)' : 'translateX(-100%)';
+    // ==============================
+    // TEXT EXIT ANIMATION
+    // ==============================
 
-        next.style.opacity = '1';
+    if (copy) {
 
-        next.classList.add('active');
+        copy.classList.remove('text-enter', 'text-exit');
 
-        // Force browser layout
-        next.offsetHeight;
+        copy.classList.add('text-exit');
 
-        // Animate both slides
-        next.style.transition =
-            `transform ${transitionDuration}ms cubic-bezier(0.22, 1, 0.36, 1)`;
+    }
 
-        previous.style.transition =
-            `transform ${transitionDuration}ms cubic-bezier(0.22, 1, 0.36, 1)`;
+    // ==============================
+    // PREPARE BACKGROUND
+    // ==============================
 
-        next.style.transform = 'translateX(0)';
+    next.style.transition = 'none';
 
-        previous.style.transform =
-            direction > 0 ? 'translateX(-100%)' : 'translateX(100%)';
+    next.style.transform =
+        direction > 0 ? 'translateX(100%)' : 'translateX(-100%)';
+
+    next.style.opacity = '1';
+
+    next.classList.add('active');
+
+    next.offsetHeight;
+
+    // ==============================
+    // BACKGROUND TRANSITION
+    // ==============================
+
+    next.style.transition =
+        `transform ${transitionDuration}ms cubic-bezier(0.22, 1, 0.36, 1)`;
+
+    previous.style.transition =
+        `transform ${transitionDuration}ms cubic-bezier(0.22, 1, 0.36, 1)`;
+
+    next.style.transform = 'translateX(0)';
+
+    previous.style.transform =
+        direction > 0 ? 'translateX(-100%)' : 'translateX(100%)';
 
 
-        // Update text content
+    // ==============================
+    // TEXT CONTENT UPDATE
+    // ==============================
+
+    setTimeout(() => {
+
         updateContent(index);
 
+        if (copy) {
 
-        // Update current slide
-        current = index;
+            copy.classList.remove('text-exit');
 
-
-        // Progress bar
-        if (progress) {
-
-            progress.style.width =
-                ((current + 1) / slides.length * 100) + '%';
+            copy.classList.add('text-enter');
 
         }
 
+    }, 350);
 
-        // Finish transition
-        setTimeout(() => {
 
-            slides.forEach((slide, i) => {
+    // ==============================
+    // TEXT ENTER ANIMATION
+    // ==============================
 
-                if (i !== current) {
+    setTimeout(() => {
 
-                    slide.classList.remove('active');
+        if (copy) {
 
-                    slide.style.transition = 'none';
-                    slide.style.transform = 'translateX(100%)';
-                    slide.style.opacity = '0';
+            copy.classList.remove('text-enter');
 
-                }
+        }
 
-            });
+    }, 450);
 
-            previous.style.transition = 'none';
 
-            isAnimating = false;
+    // ==============================
+    // UPDATE CURRENT SLIDE
+    // ==============================
 
-        }, transitionDuration);
+    current = index;
+
+
+    // ==============================
+    // PROGRESS BAR
+    // ==============================
+
+    if (progress) {
+
+        progress.style.width =
+            ((current + 1) / slides.length * 100) + '%';
 
     }
+
+
+    // ==============================
+    // FINISH TRANSITION
+    // ==============================
+
+    setTimeout(() => {
+
+        slides.forEach((slide, i) => {
+
+            if (i !== current) {
+
+                slide.classList.remove('active');
+
+                slide.style.transition = 'none';
+
+                slide.style.transform = 'translateX(100%)';
+
+                slide.style.opacity = '0';
+
+            }
+
+        });
+
+        previous.style.transition = 'none';
+
+        isAnimating = false;
+
+    }, transitionDuration);
+
+}
 
 
     // ============================================
