@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | ATC Holidays – Every Journey Has a Story</title>
+
+<meta name="description" content="Explore memorable destinations, tour packages, transportation and hospitality experiences with ATC Holidays.">
+
+<meta name="theme-color" content="#092b2b">
+
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="icon" type="image/png" href="assets/images/faviconi.png">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --green: #092b2b;
+    --green-light: #164646;
+    --green-dark: #061f1f;
+    --gold: #c5a45a;
+    --gold-light: #e0cc91;
+    --white: #ffffff;
+    --text: #c2d0c8;
+    --border: rgba(255,255,255,.16);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.gallery-page {
+    background: var(--green);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+.gallery-page h1,
+.gallery-page h2,
+.gallery-page h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.gallery-page a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.gallery-page .container {
+    width: min(1200px, 90%);
+    margin: auto;
+}
+
+/* HEADER */
+
+.gallery-page .site-header {
+    background: var(--green-dark);
+}
+
+/* HERO */
+
+.gallery-hero {
+    min-height: 790px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green);
+    isolation: isolate;
+}
+
+.hero-background-word {
+    position: absolute;
+    top: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(100px, 17vw, 210px);
+    font-weight: 700;
+    white-space: nowrap;
+    color: rgba(255,255,255,.035);
+    pointer-events: none;
+}
+
+.hero-circle {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(197,164,90,.2);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.hero-circle::before {
+    content: "";
+    position: absolute;
+    inset: 35px;
+    border: 1px solid rgba(197,164,90,.15);
+    border-radius: 50%;
+}
+
+.hero-circle::after {
+    content: "";
+    position: absolute;
+    inset: 80px;
+    border: 1px dashed rgba(197,164,90,.12);
+    border-radius: 50%;
+}
+
+/* POLAROID */
+
+.polaroid {
+    position: absolute;
+    background: #fff;
+    padding: 10px 10px 34px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.25);
+    z-index: 2;
+    transform-style: preserve-3d;
+    transition: transform .6s ease, box-shadow .4s ease;
+    /* Soft entrance + independent floating motion */
+    animation:
+        cardReveal .9s cubic-bezier(.2,.75,.25,1) both,
+        cardFloat 7s ease-in-out 1s infinite,
+        cardRotate 10s ease-in-out 1s infinite;
+    will-change: transform, translate;
+}
+
+.polaroid img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease, filter .5s ease;
+}
+
+/* A gentle cinematic reveal without changing the existing card layout */
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        scale: .88;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* Each photo gently drifts up and down */
+@keyframes cardRotate {
+    0%, 100% { rotate: -2deg; }
+    50%      { rotate: 2deg; }
+}
+
+@keyframes cardFloat {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -11px; }
+}
+
+.photo-one { animation-delay: .05s, 1.05s, 1.1s; }
+.photo-two { animation-delay: .2s, 1.2s, 1.35s; }
+.photo-three { animation-delay: .35s, 1.35s, 1.7s; }
+.photo-four { animation-delay: .5s, 1.5s, 1.5s; }
+.photo-five { animation-delay: .65s, 1.65s, 1.9s; }
+
+.polaroid:hover {
+    z-index: 8;
+    box-shadow: 0 28px 55px rgba(0,0,0,.48);
+}
+
+.polaroid:hover img {
+    transform: scale(1.055);
+    filter: saturate(1.12);
+}
+
+.polaroid-caption {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    bottom: 10px;
+    text-align: center;
+    color: #74746c;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.polaroid::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    width: 65px;
+    height: 20px;
+    background: rgba(210,186,119,.48);
+    top: -9px;
+    left: 35%;
+    transform: rotate(-4deg);
+}
+
+.polaroid:hover {
+    z-index: 8;
+    box-shadow: 0 25px 45px rgba(0,0,0,.4);
+}
+
+.photo-one {
+    width: 250px;
+    height: 360px;
+    left: 7%;
+    top: 20%;
+    transform: rotate(-5deg);
+}
+
+.photo-one:hover {
+    transform: rotate(-1deg) translateY(-10px);
+}
+
+.photo-two {
+    width: 185px;
+    height: 230px;
+    left: 39%;
+    top: 8%;
+    transform: rotate(3deg);
+}
+
+.photo-two:hover {
+    transform: rotate(0deg) translateY(-10px);
+}
+
+.photo-three {
+    width: 235px;
+    height: 325px;
+    right: 7%;
+    top: 16%;
+    transform: rotate(5deg);
+}
+
+.photo-three:hover {
+    transform: rotate(1deg) translateY(-10px);
+}
+
+.photo-four {
+    width: 245px;
+    height: 225px;
+    left: 10%;
+    bottom: 5%;
+    transform: rotate(3deg);
+}
+
+.photo-four:hover {
+    transform: rotate(0deg) translateY(-10px);
+}
+
+.photo-five {
+    width: 210px;
+    height: 265px;
+    right: 11%;
+    bottom: 8%;
+    transform: rotate(-4deg);
+}
+
+.photo-five:hover {
+    transform: rotate(0deg) translateY(-10px);
+}
+
+
+
+/* HERO CONTENT */
+
+.hero-center {
+    position: relative;
+    z-index: 5;
+    width: min(470px, 90%);
+    text-align: center;
+    margin-top: 20px;
+    padding: 25px;
+}
+
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 23px;
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.hero-center h1 {
+    font-size: clamp(48px, 5vw, 68px);
+    line-height: 1.04;
+    font-weight: 500;
+    color: white;
+    margin: 0 0 22px;
+}
+
+.hero-center h1 em {
+    display: block;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+.hero-description {
+    max-width: 390px;
+    margin: auto;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--text);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.hero-btn-primary {
+    background: var(--gold);
+    color: var(--green);
+}
+
+.hero-btn-primary:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+.hero-btn-secondary {
+    color: white;
+    border: 1px solid rgba(255,255,255,.6);
+}
+
+.hero-btn-secondary:hover {
+    background: var(--gold);
+    color: var(--green);
+    border-color: var(--gold);
+}
+
+.hero-details {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.hero-details span {
+    font-size: 8px;
+    letter-spacing: 1px;
+    padding: 7px 9px;
+    border: 1px solid var(--border);
+    color: var(--gold-light);
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--text);
+}
+
+.hero-scroll i {
+    font-size: 17px;
+    animation: scrollArrow 1.5s infinite;
+}
+
+@keyframes scrollArrow {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+/* INTRO */
+
+.gallery-intro {
+    text-align: center;
+    padding: 110px 20px 65px;
+    background: var(--green);
+}
+
+.section-label {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.gallery-intro h2 {
+    font-size: clamp(35px,5vw,55px);
+    color: white;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.gallery-intro h2 em {
+    color: var(--gold);
+}
+
+.gallery-intro p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--text);
+}
+
+/* FILTERS */
+
+.gallery-filters {
+    padding: 20px 0 45px;
+    background: var(--green);
+}
+
+.filter-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 12px 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.filter-btn i {
+    margin-right: 7px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--gold);
+    color: var(--green);
+    border-color: var(--gold);
+}
+
+/* GALLERY */
+
+.gallery-section {
+    padding: 20px 0 110px;
+    background: var(--green);
+}
+
+.gallery-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 35px;
+    gap: 20px;
+}
+
+.gallery-heading h2 {
+    font-size: 43px;
+    font-weight: 500;
+    color: white;
+    margin: 12px 0 0;
+}
+
+.gallery-count {
+    color: var(--text);
+    font-size: 12px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-auto-rows: 90px;
+    gap: 18px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--green-light);
+    cursor: pointer;
+    border-radius: 3px;
+    isolation: isolate;
+}
+
+.gallery-item.hidden {
+    display: none;
+}
+
+.gallery-item:nth-child(1) {
+    grid-column: span 7;
+    grid-row: span 5;
+}
+
+.gallery-item:nth-child(2) {
+    grid-column: span 5;
+    grid-row: span 3;
+}
+
+.gallery-item:nth-child(3) {
+    grid-column: span 5;
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(n+4) {
+    grid-column: span 4;
+    grid-row: span 3;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .8s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg,rgba(4,25,24,.95),transparent 85%);
+    z-index: 1;
+}
+
+.gallery-item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    z-index: 2;
+    color: white;
+    width: 100%;
+}
+
+.gallery-item-info span {
+    display: block;
+    color: var(--gold-light);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+.gallery-item-info h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 7px;
+}
+
+.gallery-item-info p {
+    font-size: 11px;
+    margin: 0;
+    color: rgba(255,255,255,.8);
+}
+
+.gallery-open {
+    position: absolute;
+    z-index: 3;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: white;
+    color: var(--green);
+    display: grid;
+    place-items: center;
+    transition: .3s;
+}
+
+.gallery-item:hover .gallery-open {
+    background: var(--gold);
+    color: var(--green);
+    transform: rotate(45deg);
+}
+
+.no-results {
+    display: none;
+    padding: 70px 20px;
+    text-align: center;
+    color: var(--text);
+}
+
+/* CTA */
+
+.experience-banner {
+    background: var(--green-dark);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-banner::before,
+.experience-banner::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 50%;
+}
+
+.experience-banner::before {
+    left: -180px;
+    top: -180px;
+}
+
+.experience-banner::after {
+    right: -180px;
+    bottom: -180px;
+}
+
+.experience-banner span {
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.experience-banner h2 {
+    font-size: clamp(36px,5vw,60px);
+    font-weight: 500;
+    margin: 22px 0;
+}
+
+.experience-banner p {
+    max-width: 580px;
+    margin: auto;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.experience-banner a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 16px 30px;
+    background: var(--gold);
+    color: var(--green);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.experience-banner a:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+/* LIGHTBOX */
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(3,15,15,.97);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 45px;
+}
+
+.gallery-lightbox.show {
+    display: flex;
+    animation: lightboxIn .3s ease;
+}
+
+@keyframes lightboxIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox-content {
+    width: 100%;
+    max-width: 1050px;
+    text-align: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+}
+
+.lightbox-caption {
+    color: white;
+    margin-top: 20px;
+}
+
+.lightbox-caption h3 {
+    font-size: 27px;
+    font-weight: 500;
+    margin: 0 0 8px;
+}
+
+.lightbox-caption p {
+    color: #c3cbc4;
+    font-size: 12px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,.12);
+    color: white;
+    cursor: pointer;
+    font-size: 19px;
+    transition: .3s;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: var(--gold);
+    color: var(--green);
+}
+
+.lightbox-close {
+    right: 30px;
+    top: 25px;
+    font-size: 26px;
+}
+
+.lightbox-prev {
+    left: 25px;
+    top: 50%;
+}
+
+.lightbox-next {
+    right: 25px;
+    top: 50%;
+}
+
+.lightbox-counter {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* REVEAL */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
+
+.gallery-page footer {
+    background: var(--green-dark);
+}
+
+/* MOBILE */
+
+@media(max-width:1000px) {
+    .gallery-hero {
+        min-height: 750px;
+    }
+
+    .photo-one {
+        left: 2%;
+        width: 185px;
+        height: 280px;
+    }
+
+    .photo-two {
+        left: 40%;
+        width: 145px;
+        height: 190px;
+    }
+
+    .photo-three {
+        right: 2%;
+        width: 180px;
+        height: 270px;
+    }
+
+    .photo-four {
+        left: 4%;
+        width: 180px;
+        height: 180px;
+    }
+
+    .photo-five {
+        right: 4%;
+        width: 170px;
+        height: 205px;
+    }
+}
+
+@media(max-width:600px) {
+    .polaroid {
+        animation-duration: .8s, 8s;
+    }
+
+    .gallery-hero {
+        min-height: 850px;
+        align-items: flex-start;
+    }
+
+    .hero-background-word {
+        top: 95px;
+        font-size: 90px;
+    }
+
+    .hero-circle {
+        width: 340px;
+        height: 340px;
+        top: 35%;
+    }
+
+    .hero-center {
+        width: 100%;
+        margin-top: 205px;
+        padding: 15px;
+    }
+
+    .hero-center h1 {
+        font-size: 46px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .photo-one {
+        top: 30px;
+        left: 4%;
+        width: 120px;
+        height: 160px;
+        transform: rotate(-7deg);
+    }
+
+    .photo-two {
+        top: 15px;
+        left: 39%;
+        width: 100px;
+        height: 130px;
+    }
+
+    .photo-three {
+        top: 35px;
+        right: 3%;
+        width: 110px;
+        height: 150px;
+        transform: rotate(6deg);
+    }
+
+    .photo-four {
+        bottom: 60px;
+        left: 5%;
+        width: 130px;
+        height: 145px;
+    }
+
+    .photo-five {
+        bottom: 55px;
+        right: 5%;
+        width: 120px;
+        height: 155px;
+    }
+
+    .polaroid {
+        padding: 6px 6px 25px;
+    }
+
+    .polaroid-caption {
+        font-size: 7px;
+        bottom: 7px;
+    }
+
+    .polaroid::before {
+        width: 40px;
+        height: 13px;
+        top: -6px;
+    }
+
+    .hero-eyebrow {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .hero-btn {
+        padding: 12px;
+        font-size: 10px;
+    }
+
+    .hero-details {
+        gap: 5px;
+    }
+
+    .hero-details span {
+        font-size: 7px;
+        padding: 6px;
+    }
+
+    .hero-scroll {
+        bottom: 12px;
+    }
+
+    .gallery-intro {
+        padding: 75px 20px 45px;
+    }
+
+    .filter-list {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 0 20px 12px;
+        scrollbar-width: none;
+    }
+
+    .filter-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+    }
+
+    .gallery-heading {
+        display: block;
+    }
+
+    .gallery-heading h2 {
+        font-size: 34px;
+    }
+
+    .gallery-count {
+        display: block;
+        margin-top: 12px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: 185px;
+        gap: 12px;
+    }
+
+    .gallery-item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(n+4) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .gallery-item-info {
+        padding: 12px;
+    }
+
+    .gallery-item-info h3 {
+        font-size: 16px;
+    }
+
+    .gallery-item-info p {
+        display: none;
+    }
+
+    .gallery-item-info span {
+        font-size: 8px;
+    }
+
+    .gallery-open {
+        width: 32px;
+        height: 32px;
+        right: 9px;
+        top: 9px;
+        font-size: 11px;
+    }
+
+    .gallery-lightbox {
+        padding: 15px;
+    }
+
+    .lightbox-prev {
+        left: 8px;
+    }
+
+    .lightbox-next {
+        right: 8px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+    }
+
+    .lightbox-counter {
+        top: 28px;
+        left: 18px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        rotate: 0deg !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+</style>
+</head>
+
+<body class="gallery-page">
+
+<div class="page-progress" aria-hidden="true"></div>
+
+<!-- HEADER -->
+
+<header class="site-header inner">
+    <div class="container nav">
+
+        <a class="brand" href="index.html">
+            <img src="assets/images/logo-top2.webp"
+                alt="ATC Holidays"
+                style="height:75px;width:auto;object-fit:contain;">
+        </a>
+
+        <button class="menu-toggle" aria-label="Open navigation">☰</button>
+
+        <nav class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="packages.html">Tour Packages</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="blog.html">Blog</a>
+            <a href="faq.html">FAQ</a>
+            <a class="nav-cta" href="contact.html">Contact Us</a>
+
+            <div class="social-icons">
+
+                <a class="instagram"
+                    href="https://www.instagram.com/a.t.c_holidays?rpxt=MW9kOWhrcmNjaXM2bQ=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a class="facebook"
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a class="youtube"
+                    href="https://www.youtube.com/@ATCHOLIDAYS"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+
+<section class="gallery-hero">
+
+    <div class="hero-background-word">JOURNEYS</div>
+    <div class="hero-circle"></div>
+
+    <div class="polaroid photo-one">
+        <img src="assets/images/gallery/tour packages.jpg"
+            alt="Beautiful travel destinations"
+            fetchpriority="high">
+        <span class="polaroid-caption">Beautiful Destinations · Kerala</span>
+    </div>
+
+    <div class="polaroid photo-two">
+        <img src="assets/images/gallery/hospitality.jpg"
+            alt="Hospitality and holidays">
+        <span class="polaroid-caption">Stay · Explore · Experience</span>
+    </div>
+
+    <div class="polaroid photo-three">
+        <img src="assets/images/gallery/cabs-coach-rentals.webp"
+            alt="ATC Holidays cabs and coaches">
+        <span class="polaroid-caption">Travel in Comfort</span>
+    </div>
+
+    <div class="polaroid photo-four">
+        <img src="assets/images/gallery/group_transportation.jpg"
+            alt="Group transportation">
+        <span class="polaroid-caption">Journeys Together</span>
+    </div>
+
+    <div class="polaroid photo-five">
+        <img src="assets/images/gallery/school_transportation.jpg"
+            alt="School transportation">
+        <span class="polaroid-caption">Safe Everyday Journeys</span>
+    </div>
+
+    <div class="hero-center">
+
+        <div class="hero-eyebrow">
+            THE ATC HOLIDAYS COLLECTION
+        </div>
+
+        <h1>
+            Every Journey
+            <em>Has a Story.</em>
+        </h1>
+
+        <p class="hero-description">
+            Discover beautiful destinations, unforgettable
+            experiences and the journeys that bring people
+            together. Explore the world of ATC Holidays.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#experiences" class="hero-btn hero-btn-primary">
+                Explore Our Gallery
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+
+            <a href="contact.html" class="hero-btn hero-btn-secondary">
+                Plan Your Journey
+            </a>
+
+        </div>
+
+        <div class="hero-details">
+            <span>TOUR PACKAGES</span>
+            <span>TRANSPORTATION</span>
+            <span>HOSPITALITY</span>
+        </div>
+
+    </div>
+
+    <div class="hero-scroll">
+        SCROLL TO DISCOVER
+        <i class="fa-solid fa-arrow-down"></i>
+    </div>
+
+</section>
+
+<!-- INTRO -->
+
+<section class="gallery-intro reveal">
+
+    <div class="section-label">BEYOND THE DESTINATION</div>
+
+    <h2>
+        Moments Worth
+        <em>Remembering.</em>
+    </h2>
+
+    <p>
+        Every journey has something special to offer.
+        From discovering new destinations to travelling
+        together in comfort, explore the experiences,
+        people and services that make ATC Holidays different.
+    </p>
+
+</section>
+
+<!-- FILTERS -->
+
+<section class="gallery-filters" id="experiences">
+
+    <div class="container">
+
+        <div class="filter-list">
+
+            <button class="filter-btn active" data-filter="all">
+                <i class="fa-solid fa-border-all"></i>
+                All Experiences
+            </button>
+
+            <button class="filter-btn" data-filter="tour">
+                <i class="fa-solid fa-mountain-sun"></i>
+                Tour Packages
+            </button>
+
+            <button class="filter-btn" data-filter="cabs">
+                <i class="fa-solid fa-car"></i>
+                Cabs & Coach
+            </button>
+
+            <button class="filter-btn" data-filter="school">
+                <i class="fa-solid fa-bus"></i>
+                School Transportation
+            </button>
+
+            <button class="filter-btn" data-filter="corporate">
+                <i class="fa-solid fa-building"></i>
+                Corporate
+            </button>
+
+            <button class="filter-btn" data-filter="group">
+                <i class="fa-solid fa-users"></i>
+                Group Transportation
+            </button>
+
+            <button class="filter-btn" data-filter="hospitality">
+                <i class="fa-solid fa-hotel"></i>
+                Hospitality
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery-section">
+
+    <div class="container">
+
+        <div class="gallery-heading reveal">
+
+            <div>
+                <div class="section-label">THE EXPERIENCE COLLECTION</div>
+                <h2>Explore Our World.</h2>
+            </div>
+
+            <div class="gallery-count">
+                <span id="visibleCount">06</span>
+                Experiences
+            </div>
+
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+
+            <article class="gallery-item reveal"
+                data-category="tour"
+                data-title="Discover New Horizons"
+                data-description="Customized holidays and memorable destinations.">
+
+                <img src="assets/images/gallery/tour packages.jpg"
+                    alt="ATC Holidays tour packages" loading="lazy">
+
+                <div class="gallery-open">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+
+                <div class="gallery-item-info">
+                    <span>01 / DISCOVER</span>
+                    <h3>Discover New Horizons</h3>
+                    <p>Tour Packages · Memorable Destinations</p>
+                </div>
+            </article>
+
+            <article class="gallery-item reveal"
+                data-category="cabs"
+                data-title="Travel In Comfort"
+                data-description="Sedans, Innovas, Tempo Travellers and tourist coaches.">
+
+                <img src="assets/images/gallery/cabs-coach-rentals.webp"
+                    alt="ATC Holidays cab and coach rentals" loading="lazy">
+
+                <div class="gallery-open">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+
+                <div class="gallery-item-info">
+                    <span>02 / JOURNEY</span>
+                    <h3>Travel In Comfort</h3>
+                    <p>Cabs · Coaches · Tourist Vehicles</p>
+                </div>
+            </article>
+
+            <article class="gallery-item reveal"
+                data-category="school"
+                data-title="Everyday Journeys"
+                data-description="School transportation services.">
+
+                <img src="assets/images/gallery/school_transportation.jpg"
+                    alt="ATC Holidays school transportation" loading="lazy">
+
+                <div class="gallery-open">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+
+                <div class="gallery-item-info">
+                    <span>03 / SAFETY</span>
+                    <h3>Everyday Journeys</h3>
+                    <p>School Transportation</p>
+                </div>
+            </article>
+
+            <article class="gallery-item reveal"
+                data-category="corporate"
+                data-title="Move Together"
+                data-description="Corporate transportation solutions.">
+
+                <img src="assets/images/gallery/corporate transportation.jpg"
+                    alt="Corporate transportation services" loading="lazy">
+
+                <div class="gallery-open">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+
+                <div class="gallery-item-info">
+                    <span>04 / BUSINESS</span>
+                    <h3>Move Together</h3>
+                    <p>Corporate Transportation</p>
+                </div>
+            </article>
+
+            <article class="gallery-item reveal"
+                data-category="group"
+                data-title="Better Together"
+                data-description="Group transportation for shared journeys.">
+
+                <img src="assets/images/gallery/group_transportation.jpg"
+                    alt="Group transportation services" loading="lazy">
+
+                <div class="gallery-open">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+
+                <div class="gallery-item-info">
+                    <span>05 / TOGETHER</span>
+                    <h3>Better Together</h3>
+                    <p>Group Transportation</p>
+                </div>
+            </article>
+
+            <article class="gallery-item reveal"
+                data-category="hospitality"
+                data-title="Stay Relax Explore"
+                data-description="Hotel reservations and houseboat packages.">
+
+                <img src="assets/images/gallery/hospitality.jpg"
+                    alt="ATC Holidays hospitality services" loading="lazy">
+
+                <div class="gallery-open">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+
+                <div class="gallery-item-info">
+                    <span>06 / RELAX</span>
+                    <h3>Stay. Relax. Explore.</h3>
+                    <p>Hospitality · Hotels · Houseboats</p>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="no-results" id="noResults">
+            <h3>No experiences found.</h3>
+            <p>Please select another category.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CLOSING CTA -->
+
+<section class="experience-banner">
+
+    <div class="container">
+
+        <span>YOUR NEXT ADVENTURE AWAITS</span>
+
+        <h2>Your Next Story Starts Here.</h2>
+
+        <p>
+            The best memories begin with a journey.
+            Let ATC Holidays help you discover new places,
+            create unforgettable moments and enjoy every mile.
+        </p>
+
+        <a href="contact.html">
+            Plan Your Journey
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- LIGHTBOX -->
+
+<div class="gallery-lightbox" id="galleryLightbox">
+
+    <div class="lightbox-counter" id="lightboxCounter">
+        01 / 06
+    </div>
+
+    <button class="lightbox-close" aria-label="Close image">
+        &times;
+    </button>
+
+    <button class="lightbox-prev" aria-label="Previous image">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <div class="lightbox-content">
+
+        <img src="" alt="" id="lightboxImage">
+
+        <div class="lightbox-caption">
+            <h3 id="lightboxTitle"></h3>
+            <p id="lightboxDescription"></p>
+        </div>
+
+    </div>
+
+    <button class="lightbox-next" aria-label="Next image">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <a class="brand" href="index.html">
+                    <img src="assets/images/footer logo.png"
+                        alt="ATC Holidays"
+                        style="height:100px;width:auto;object-fit:contain;">
+                </a>
+
+                <p>
+                    Thoughtfully planned journeys, memorable places
+                    and experiences worth travelling for.
+                </p>
+
+            </div>
+
+            <div>
+                <h4>Explore</h4>
+                <p>
+                    <a href="about.html">About Us</a><br>
+                    <a href="services.html">Services</a><br>
+                    <a href="packages.html">Tour Packages</a><br>
+                    <a href="gallery.html">Gallery</a><br>
+                    <a href="blog.html">Blog</a>
+                </p>
+            </div>
+
+            <div>
+                <h4>Information</h4>
+                <p>
+                    <a href="faq.html">FAQs</a><br>
+                    <a href="contact.html">Contact Us</a>
+                </p>
+            </div>
+
+            <div>
+                <h4>Connect</h4>
+                <p>
+                    <a href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer">Facebook</a><br>
+
+                    <a href="https://www.instagram.com/a.t.c_holidays?rpxt=MW9kOWhrcmNjaXM2bQ=="
+                        target="_blank"
+                        rel="noopener noreferrer">Instagram</a><br>
+
+                    <a href="https://www.youtube.com/@ATCHOLIDAYS"
+                        target="_blank"
+                        rel="noopener noreferrer">YouTube</a><br>
+
+                    <a href="mailto:Info@atcholidays.com">
+                        Info@atcholidays.com
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span data-year></span> ATC-Holidays.
+                All rights reserved.
+            </span>
+
+            <span>Designed By GVX Tech</span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- CALL AND WHATSAPP -->
+
+<div class="call-whatsapp">
+
+    <a class="call"
+        href="tel:+919895799477"
+        aria-label="Call ATC Holidays">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <a class="whatsapp"
+        href="https://wa.me/919895799477?text=Hello%20I%20would%20like%20to%20know%20about%20your%20tour%20packages"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</div>
+
+
+<script src="assets/site.js"></script>
+
+<script>
+
+/* GALLERY FILTER */
+
+const filterButtons =
+    document.querySelectorAll('.filter-btn');
+
+const galleryItems = [
+    ...document.querySelectorAll('.gallery-item')
+];
+
+const visibleCount =
+    document.getElementById('visibleCount');
+
+const noResults =
+    document.getElementById('noResults');
+
+
+function filterGallery(category) {
+
+    let count = 0;
+
+    galleryItems.forEach(item => {
+
+        const match =
+            category === 'all' ||
+            item.dataset.category === category;
+
+        item.classList.toggle('hidden', !match);
+
+        if (match) count++;
+
+    });
+
+    visibleCount.textContent =
+        String(count).padStart(2, '0');
+
+    noResults.style.display =
+        count === 0 ? 'block' : 'none';
+
+}
+
+
+filterButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        filterButtons.forEach(btn =>
+            btn.classList.remove('active')
+        );
+
+        button.classList.add('active');
+
+        filterGallery(button.dataset.filter);
+
+    });
+
+});
+
+
+/* LIGHTBOX */
+
+const lightbox =
+    document.getElementById('galleryLightbox');
+
+const lightboxImage =
+    document.getElementById('lightboxImage');
+
+const lightboxTitle =
+    document.getElementById('lightboxTitle');
+
+const lightboxDescription =
+    document.getElementById('lightboxDescription');
+
+const lightboxCounter =
+    document.getElementById('lightboxCounter');
+
+const closeButton =
+    document.querySelector('.lightbox-close');
+
+const previousButton =
+    document.querySelector('.lightbox-prev');
+
+const nextButton =
+    document.querySelector('.lightbox-next');
+
+
+let currentIndex = 0;
+let activeItems = [];
+
+
+function getVisibleItems() {
+
+    return galleryItems.filter(item =>
+        !item.classList.contains('hidden')
+    );
+
+}
+
+
+function updateLightbox() {
+
+    const item = activeItems[currentIndex];
+
+    const image = item.querySelector('img');
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+
+    lightboxTitle.textContent =
+        item.dataset.title;
+
+    lightboxDescription.textContent =
+        item.dataset.description;
+
+    lightboxCounter.textContent =
+        String(currentIndex + 1).padStart(2, '0') +
+        ' / ' +
+        String(activeItems.length).padStart(2, '0');
+
+}
+
+
+function openLightbox(index) {
+
+    activeItems = getVisibleItems();
+
+    if (!activeItems.length) return;
+
+    currentIndex = index;
+
+    updateLightbox();
+
+    lightbox.classList.add('show');
+
+    document.body.style.overflow = 'hidden';
+
+}
+
+
+function changeImage(direction) {
+
+    currentIndex =
+        (currentIndex + direction + activeItems.length) %
+        activeItems.length;
+
+    updateLightbox();
+
+}
+
+
+function closeLightbox() {
+
+    lightbox.classList.remove('show');
+
+    document.body.style.overflow = '';
+
+    lightboxImage.src = '';
+
+}
+
+
+galleryItems.forEach(item => {
+
+    item.addEventListener('click', () => {
+
+        const visibleItems = getVisibleItems();
+
+        openLightbox(visibleItems.indexOf(item));
+
+    });
+
+});
+
+
+previousButton.addEventListener('click', () =>
+    changeImage(-1)
+);
+
+nextButton.addEventListener('click', () =>
+    changeImage(1)
+);
+
+closeButton.addEventListener('click', closeLightbox);
+
+
+lightbox.addEventListener('click', event => {
+
+    if (event.target === lightbox) {
+        closeLightbox();
+    }
+
+});
+
+
+/* KEYBOARD NAVIGATION */
+
+document.addEventListener('keydown', event => {
+
+    if (!lightbox.classList.contains('show')) return;
+
+    if (event.key === 'Escape') {
+        closeLightbox();
+    }
+
+    if (event.key === 'ArrowLeft') {
+        changeImage(-1);
+    }
+
+    if (event.key === 'ArrowRight') {
+        changeImage(1);
+    }
+
+});
+
+
+/* MOBILE SWIPE */
+
+let touchStartX = 0;
+
+lightbox.addEventListener('touchstart', event => {
+
+    touchStartX =
+        event.changedTouches[0].screenX;
+
+}, { passive: true });
+
+
+lightbox.addEventListener('touchend', event => {
+
+    const touchEndX =
+        event.changedTouches[0].screenX;
+
+    const difference =
+        touchEndX - touchStartX;
+
+    if (Math.abs(difference) > 60) {
+
+        changeImage(
+            difference > 0 ? -1 : 1
+        );
+
+    }
+
+}, { passive: true });
+
+
+/* SCROLL REVEAL */
+
+const revealElements =
+    document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+
+    const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add('visible');
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.12
+    });
+
+    revealElements.forEach(element =>
+        observer.observe(element)
+    );
+
+} else {
+
+    revealElements.forEach(element =>
+        element.classList.add('visible')
+    );
+
+}
+
+
+/* CURRENT YEAR */
+
+document.querySelectorAll('[data-year]').forEach(element => {
+
+    element.textContent =
+        new Date().getFullYear();
+
+});
+
+</script>
+
+</body>
+</html>
